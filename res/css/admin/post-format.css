@@ -1,0 +1,106 @@
+#margox_format_video,#margox_format_link,#margox_format_audio,#margox_format_quote,#margox_format_status{display:none;}
+
+#normal-sortables{
+  min-height:0 !important;
+}
+
+.clearfix{
+	clear:both;
+}
+.margox-text{
+	height:35px;
+	line-height:35px;
+	margin:10px 0;
+	width:100%;
+}
+.margox-textarea{
+	height:80px;
+	margin:10px 0;
+	max-width:100%;
+	width:100%;
+}
+.margox-meta-gallery-wrapper,.margox-meta-gallery-add{
+	display:inline-block;
+	float:left;
+}
+.margox-meta-gallery-item,.margox-meta-gallery-add{
+	background:#f0f0f0;
+	color:#ccc;
+	cursor:pointer;
+	display:inline-block;
+	height:auto;
+	margin:7px 10px 3px 0;
+	text-align:center;
+	text-decoration:none;
+	transition:.4s;
+	width:100px;
+}
+.margox-meta-gallery-item img{
+	display: block;
+}
+.margox-meta-gallery-item select{
+	display: block;
+	margin: 5px;
+	width: 90px;
+}
+.margox-meta-gallery-slide select{
+	display: none;
+}
+.margox-meta-gallery-add{
+	border: solid 1px rgba(0,0,0,.4);
+	font-size: 24px;
+	height:100px;
+	line-height:100px;
+}
+.margox-meta-gallery-add:hover{
+	background:#e0e0e0;
+	color:#999;
+}
+
+.post-type-portfolio #post-format-quote,
+.post-type-portfolio .post-format-quote,
+.post-type-portfolio #post-format-status,
+.post-type-portfolio .post-format-status,
+.post-type-portfolio #post-format-aside,
+.post-type-portfolio .post-format-aside{
+  display: none;
+}
+.post-type-portfolio #post-formats-select{
+  height: 142px;
+  overflow: hidden;
+}
+
+#margox-meta-thumbnail{
+  text-align: center;
+}
+.margox-meta-thumbnail-preview-wrapper{
+  display: inline-block;
+  position: relative;
+}
+#margox-meta-thumbnail-preview{
+  background: #c0c0c0 no-repeat 50% 50% url(./grid_cursor.png);
+  background-size: 32px 32px;
+  border: none;
+  cursor: pointer;
+  transition: .1s;
+}
+#margox-meta-thumbnail-preview:hover{
+  background-color: #f0f0f0;
+}
+#margox-remove-thumbnail{
+  background-color: #e74c3c;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  position: absolute;
+  right: 5px;
+  text-align: center;
+  text-decoration: none;
+  top: 5px;
+  width: 32px;
+}
+#margox-remove-thumbnail:hover{
+  background-color: #c0392b;
+}
