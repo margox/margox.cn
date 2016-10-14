@@ -1,0 +1,30 @@
+$content_width: 980px;
+
+html,body{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: Helvetica, 'SourceHanSans', 'Microsoft Yahei';
+  background-color: #fff;
+  cursor: default;
+  -webkit-font-smoothing: antialiased;
+}
+input,button{
+  outline: none;
+}
+
+.container{
+  width: $content_width;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+}
+
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}

@@ -1,0 +1,276 @@
+.post{
+  margin-bottom: 40px;
+}
+
+.post-header{
+  margin-bottom: 10px;
+
+  .title{
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 32px;
+
+    a{
+      color: #333;
+      text-decoration: none;
+      &:hover{
+        color: #000;
+      }
+    }
+
+  }
+
+}
+
+.post-featured-content{
+  margin-top: 20px;
+
+  .featured-image{
+    display: block;
+    overflow: hidden;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      transition: .4s;
+    }
+
+    &:hover img{
+      transform: scale(1.1);
+    }
+
+  }
+
+  .post-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: -10px;
+    padding: 0;
+    overflow: hidden;
+
+    li{
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+      width: 25%;
+      padding: 10px;
+      overflow: hidden;
+
+      a{
+        position: relative;
+        display: block;
+        padding-bottom: 100%;
+        overflow: hidden;
+      
+        img{
+          position: absolute;
+          display: block;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: .4s;
+        }
+
+        &:hover img{
+          transform: scale(1.1);
+        }
+
+      }
+
+    }
+
+  }
+
+  .post-audio{
+    height: 80px;
+    padding: 16px;
+    background-color: #efefef;
+
+    .cover{
+      position: relative;
+      float: left;
+      width: 80px;
+      height: 80px;
+      background-color: #333;
+      background-size: cover;
+
+      .btn-play-pause{
+        display: block;
+        width: 80px;
+        height: 80px;
+        border: none;
+        text-decoration: none;
+        background-color: rgba(#000, .5);
+
+        i{
+          display: block;
+          width: 80px;
+          height: 80px;
+          color: #fff;
+          font-size: 24px;
+          line-height: 80px;
+          text-align: center;
+
+          &.icon-pause{
+            display: none;
+          }
+
+        }
+
+        &.playing{
+
+          .icon-play{
+            display: none;
+          }
+
+          .icon-pause{
+            display: block;
+          }
+
+        }
+
+      }
+
+    }
+
+    .caption,
+    .sub-caption{
+      margin: 9px 0 6px 96px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .caption{    
+      color: #666;
+      font-size: 14px;
+    }
+
+    .sub-caption{
+      color: #999;
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    .progress{
+      margin: 9px 0 0 96px;
+      overflow: hidden;
+
+      span{
+        height: 15px;
+        color: #666;
+        line-height: 16px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .progress-bar{
+        display: block;
+        box-sizing: border-box;
+        height: 1px;
+        margin: 7px 45px;
+        background-color: #cfcfcf;
+        border-left: solid 0 #333;
+      }
+
+      .played-time{
+        float: left;
+      }
+
+      .total-time{
+        float: right;
+      }
+
+    }
+
+  }
+
+}
+
+.post-excerpt,
+.post-content{
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@import './markdown';
+
+.post-excerpt:empty,
+.post-content:empty{
+  margin-bottom: 0;
+
+  &~.post-footer{
+    border: none;
+  }
+
+}
+
+.post-footer{
+  border-top: 1px solid #e4e4e5;
+
+  &.no-border{
+    border: none;
+  }
+
+  .metas{
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    color: #999;
+    font-size: 14px;
+
+    a{
+      color: #999;
+      text-decoration: none;
+
+      &:hover{
+        color: #333;
+      }
+
+    }
+
+  }
+
+}
+
+.poster-pagers{
+  margin-top: 100px;
+  padding: 60px;
+  text-align: center;
+  border-top: 1px solid #e4e4e5;
+
+  a,span{
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 50px;
+    margin: 0 10px;
+    padding: 0 10px;
+    color: #999;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    background-color: #f1f1f2;
+  }
+
+  a:hover{
+    color: #fff;
+    background-color: #999;
+  }
+
+  .current{
+    color: #fff;
+    background-color: #666;
+  }
+
+}

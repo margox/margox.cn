@@ -22,7 +22,9 @@ if ($blog_description && (is_home() || is_front_page())) {
 </head>
 <body <?php body_class();?>>
   <header class="blog-header">
-    <ul class="blog-menu">
+    <div class="container">
+      <h1 class="logo"><span>I am Margox</span></h1>
+      <ul class="menu pull-left">
 <?php
 $menuParameters = array(
   'theme_location' => 'primary-menu',
@@ -33,5 +35,9 @@ $menuParameters = array(
 );
 echo wp_nav_menu($menuParameters);
 ?>
-    </ul>
+      </ul>
+      <div class="search pull-right">
+        <button class="btn-search"><i class="iconfont icon-search"></i></button>
+      </div>
+    </div>
   </header>

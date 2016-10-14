@@ -23,7 +23,7 @@ function theme_setup() {
     add_theme_support('nav-menus');
     register_nav_menus(array(
         'header-menu' => '导航栏菜单'
-  ));
+    ));
 
     // 开启标题标签支持
     // add_theme_support('title-tag');
@@ -34,7 +34,6 @@ function theme_setup() {
     add_image_size('image-large-2x', 1960, '', true);
     add_image_size('image-large', 980, '', true);
     add_image_size('image-middle', 480, '', true);
-    add_image_size('image-small', 200, 200, true);
 
     // 移除前台顶栏
     add_filter('show_admin_bar', '__return_false');
@@ -66,6 +65,29 @@ function margox_editor_buttons($buttons) {
 }
 add_filter("mce_buttons_3", "margox_editor_buttons");
 
+// 网站标题
+function new_wp_title($title) {
+
+    if ($title) {
+        return $title . get_bloginfo('name');
+    } else {
+        return get_bloginfo('name');
+    }
+
+}
+add_filter('wp_title', 'new_wp_title');
+
+// 摘要长度
+function margox_excerpt_length($length) {
+    return 300;
+}
+// 摘要后缀
+function margox_excerpt_more( $more ) {
+    return "...";
+}
+add_filter('excerpt_length', 'margox_excerpt_length');
+add_filter('excerpt_more', 'margox_excerpt_more');
+
 // 移除谷歌字体
 function remove_open_sans_from_wp_core() {
     wp_deregister_style('open-sans');
@@ -78,24 +100,14 @@ add_action('init', 'remove_open_sans_from_wp_core');
 function enqueue_assets() {
 
     // 加载JS
-    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.1.0', true);
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.0', true);
 
     // 加载CSS
-    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.1.8');
+    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.0');
 
 }
 add_action('wp_enqueue_scripts', 'enqueue_assets');
-
-// 加载模板
-function get_margox_template($path, $lang = false) {
-
-    if ($lang) {
-        get_template_part('contents/' . $lang . '/' . $path);
-    } else {
-        get_template_part(__CONTENTS__ . '/' . $path);
-    }
-
-}
 
 // 获取浏览器语言
 function get_browser_lang() {
@@ -112,6 +124,70 @@ function get_res_url($path) {
     return __RES__ . $path;
 }
 
+// 获取文章相册数据
+function margox_get_post_gallery($postid = null) {
+
+    !is_numeric($postid) && $postid = get_the_ID();
+    $gallery = get_post_meta($postid, 'margox_meta_gallery', true);
+
+    if (!$gallery) {
+        return false;
+    }
+
+    $images = $gallery['images'];
+
+    if (is_array($images['urls']) && count($images['urls']) > 0) {
+
+        $html = '<ul class="post-gallery clearfix" id="post-gallery-' . $postid . '">';
+        $n = 0;
+
+        foreach ($images['urls'] as $urls) {
+
+            $image_a = explode("|", $urls);
+            $image_id = $image_a[2];
+            $image_caption = get_the_title($image_id);
+
+            $image_url = wp_get_attachment_image_src($image_id, 'full');
+            $image_url = $image_url[0];
+            empty($image_url) && $image_url = $image_a[1];
+
+            $image_thumbnail_url =  wp_get_attachment_image_src($image_id, 'image-middle');
+            $image_thumbnail_url = $image_thumbnail_url[0];
+            empty($image_thumbnail_url) && $image_thumbnail_url = $image_a[0];
+
+            if (!empty($image_url)) {
+                $html .= '
+                <li>
+                    <a href="' . $image_url . '" data-lightbox="margox-post-gallery-' . $postid . '">
+                        <img src="' . str_replace(array('http:', 'https:'), '', $image_thumbnail_url) . '">
+                    </a>
+                </li>
+                ';
+            }
+
+        }
+
+        $html .= '
+        </ul>
+        ';
+
+        return $html;
+    }
+
+    return false;
+
+}
+
+// 获取文章音频字段
+function margox_get_post_audio($postid = null) {
+
+    !is_numeric($postid) && $postid = get_the_ID();
+    $audio = get_post_meta($postid, 'margox_meta_audio', true);
+    return $audio;
+
+}
+
+// 扩展字段处理
 $margox_metaboxes = array(
      'link' => array(
         array(
@@ -239,13 +315,13 @@ function margox_create_metaboxes($post, $args) {
                 echo '<input type="text" placeholder="' . $margox_meta['placeholder'] . '" class="margox-text margox-long-text margox_meta_' . $args['args'][ 0 ] . '" name="margox_meta_' . $margox_meta['name'] . '" value="' . $meta_value . '" />';
                 break;
             case 'textarea':
-                echo '<textarea placeholder="' . $margox_meta['placeholder'] . '" class="margox-textarea margox_meta_' . $args['args'][ 0 ] . '" name="margox_meta_' . $margox_meta['name'] . '">' . $meta_value . '</textarea>';
+                echo '<textarea placeholder="' . $margox_meta['placeholder'] . '" class="margox-textarea margox_meta_' . $args['args'][0] . '" name="margox_meta_' . $margox_meta['name'] . '">' . $meta_value . '</textarea>';
                 break;
             case 'audio':
-                echo '<textarea placeholder="' . $margox_meta['placeholder'] . '" class="margox-textarea margox_meta_' . $args['args'][ 0 ] . '" id="margox_meta_audio" name="margox_meta_' . $margox_meta['name'] . '">' . $meta_value . '</textarea><a class="button" id="margox_add_audio">' . '从媒体库选取' . '</a>';
+                echo '<textarea placeholder="' . $margox_meta['placeholder'] . '" class="margox-textarea margox_meta_' . $args['args'][0] . '" id="margox_meta_audio" name="margox_meta_' . $margox_meta['name'] . '">' . $meta_value . '</textarea><a class="button" id="margox_add_audio">' . '从媒体库选取' . '</a>';
                 break;
             case 'video':
-                echo '<textarea placeholder="' . $margox_meta['placeholder'] . '" class="margox-textarea margox_meta_' . $args['args'][ 0 ] . '" id="margox_meta_video" name="margox_meta_' . $margox_meta['name'] . '">' . $meta_value . '</textarea><a class="button" id="margox_add_video">' . '从媒体库选取' . '</a>';
+                echo '<textarea placeholder="' . $margox_meta['placeholder'] . '" class="margox-textarea margox_meta_' . $args['args'][0] . '" id="margox_meta_video" name="margox_meta_' . $margox_meta['name'] . '">' . $meta_value . '</textarea><a class="button" id="margox_add_video">' . '从媒体库选取' . '</a>';
                 break;
             case 'mulitmedia':
                 $checked['slide'] = $checked['grid'] = '';
@@ -309,5 +385,37 @@ function margox_save_metas($post_id) {
 
 add_action('add_meta_boxes', 'margox_add_metaboxes');
 add_action('save_post', 'margox_save_metas');
- 
+
+// 日期格式化
+function format_date ($timeInt, $format='Y年m月d日') {
+
+    $timeInt = strtotime($timeInt);
+    if ($timeInt === 0) {
+        return '';
+    }
+    $d = time() - $timeInt + 28800;
+    if ($d < 0) {
+        return '';
+    } else {
+        if ($d < 60) {
+            return $d . '秒前';
+        } else {
+            if ($d < 3600) {
+                return floor($d / 60) . '分钟前';
+            } else {
+                if ($d < 86400) {
+                    return floor($d / 3600) . '小时前';
+                } else {
+                    if ($d < 2592000) {//3天内
+                        return floor($d / 86400) . '天前';
+                    } else { 
+                        return date($format , $timeInt);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 ?>

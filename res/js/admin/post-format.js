@@ -83,12 +83,14 @@ jQuery(document).ready(function($){
         var html = '<div class="margox-meta-gallery-item">';
         var margox_thumbnail = attachment.attributes.sizes.thumbnail;
 
+        console.log(attachment.attributes)
+
         if (typeof(margox_thumbnail) == 'undefined') {
           margox_thumbnail = attachment.attributes;
         }
 
         html += '<img src="' + margox_thumbnail.url + '" width="100px" height="100px"/>';
-        html += '<input type="hidden" class="margox_meta_gallery_fields" name="margox_meta_' + name + '[images][urls][]" value="'+margox_thumbnail.url+'|'+attachment.attributes.url+'|'+attachment.id+'" />';
+        html += '<input type="hidden" class="margox_meta_gallery_fields" name="margox_meta_' + name + '[images][urls][]" value="' + margox_thumbnail.url + '|' + attachment.attributes.url + '|' + attachment.id + '" />';
         html += '</div>';
 
         $(html).on("click", function() {

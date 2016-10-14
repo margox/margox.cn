@@ -1,0 +1,95 @@
+.blog-header{
+  height: 140px;
+  margin-bottom: 70px;
+  text-align: center;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #E4E4E5;
+
+  .container{
+    height: 140px;
+
+    .logo{
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 200px;
+      height: 60px;
+      margin: 50px auto 0 auto;
+      overflow: hidden;
+      text-align: center;
+
+      a,span{
+        padding-bottom: 5px;
+        color: #666;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: italic;
+        line-height: 58px;
+        text-decoration: none;
+        border-bottom: solid 1px #666;
+      }
+
+    }
+
+    .menu{
+      height: 40px;
+      margin-top: 65px;
+      list-style: none;
+      padding: 0;
+
+      li{
+        float: left;
+        margin-right: 60px;
+        line-height: 40px;
+
+        &.current-menu-item{
+
+          a{
+            color: #333;
+          }
+
+        }
+
+        a{
+          color: #999;
+          font-size: 16px;
+          text-decoration: none;
+
+          &:hover{
+            color: #333;
+          }
+
+        }
+
+      }
+
+    }
+
+    .search{
+      height: 40px;
+      margin-top: 65px;
+      text-align: right;
+
+      button{
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #999;
+
+        &:hover{
+          color: #333;
+        }
+
+        i{
+          font-size: 16px;
+        }
+
+      }
+
+    }
+
+  }
+
+}
