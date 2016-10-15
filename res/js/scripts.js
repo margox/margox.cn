@@ -92,21 +92,18 @@
     player_obj.addEventListener('pause', function() {
       player_btn.classList.remove('playing')
       player_status = 'paused'
-      vudio_obj.pause()
       clearTimeout(player_timmer)
     })
 
     player_obj.addEventListener('ended', function() {
       player_btn.classList.remove('playing')
       player_status = 'ended'
-      vudio_obj.pause()
       clearTimeout(player_timmer)
     })
 
     player_obj.addEventListener('abort', function() {
       player_btn.classList.remove('playing')
       player_status = 'abort'
-      vudio_obj.pause()
       clearTimeout(player_timmer)
     })
 

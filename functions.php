@@ -101,7 +101,7 @@ function enqueue_assets() {
 
     // 加载JS
     wp_enqueue_script('margox-vudio', __RES__ . 'js/libs/vudio.js', false, '0.0.1', true);
-    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.0', true);
+    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.1', true);
 
     // 加载CSS
     wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.0');

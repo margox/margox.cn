@@ -112,7 +112,7 @@
 
             var audioContext = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext),
                 source = audioContext.createMediaElementSource(this.audioEle),
-                dpr = window.devicePixelRatio || 1;
+                dpr = 1; //window.devicePixelRatio || 1;
 
             this.analyser = audioContext.createAnalyser();
             this.meta.spr = audioContext.sampleRate;
