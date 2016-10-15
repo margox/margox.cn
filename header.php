@@ -36,8 +36,12 @@ $menuParameters = array(
 echo wp_nav_menu($menuParameters);
 ?>
       </ul>
-      <div class="search pull-right">
-        <button class="btn-search"><i class="iconfont icon-search"></i></button>
+      <div class="searcher pull-right">
+        <form action="<?php echo home_url();?>">
+          <input type="text" name="s" id="J-hearder-search-input" placeholder="按回车搜索" class="hearder-search-input">
+          <label class="btn-search" for="J-hearder-search-input"><i class="iconfont icon-search"></i></label>
+        </form>
       </div>
     </div>
+    <div id="J-header-progress-bar" class="progress-bar"></div>
   </header>

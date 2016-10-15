@@ -100,7 +100,7 @@ add_action('init', 'remove_open_sans_from_wp_core');
 function enqueue_assets() {
 
     // 加载JS
-    wp_enqueue_script('jquery');
+    wp_enqueue_script('margox-vudio', __RES__ . 'js/libs/vudio.js', false, '0.0.1', true);
     wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.0', true);
 
     // 加载CSS
@@ -158,7 +158,7 @@ function margox_get_post_gallery($postid = null) {
             if (!empty($image_url)) {
                 $html .= '
                 <li>
-                    <a href="' . $image_url . '" data-lightbox="margox-post-gallery-' . $postid . '">
+                    <a href="' . $image_url . '" target="_blank" data-lightbox="margox-post-gallery-' . $postid . '">
                         <img src="' . str_replace(array('http:', 'https:'), '', $image_thumbnail_url) . '">
                     </a>
                 </li>
@@ -184,6 +184,13 @@ function margox_get_post_audio($postid = null) {
     !is_numeric($postid) && $postid = get_the_ID();
     $audio = get_post_meta($postid, 'margox_meta_audio', true);
     return $audio;
+
+}
+
+// 生产二维码
+function margox_generate_qrcode($data) {
+
+    return 'http://api.qrserver.com/v1/create-qr-code/?color=222222&bgcolor=FFFFFF&qzone=1&margin=0&size=400x400&ecc=L&data=' . $data;
 
 }
 
@@ -387,7 +394,7 @@ add_action('add_meta_boxes', 'margox_add_metaboxes');
 add_action('save_post', 'margox_save_metas');
 
 // 日期格式化
-function format_date ($timeInt, $format='Y年m月d日') {
+function format_date ($timeInt, $format = 'Y年m月d日') {
 
     $timeInt = strtotime($timeInt);
     if ($timeInt === 0) {

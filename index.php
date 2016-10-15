@@ -21,9 +21,10 @@ if (have_posts()) {
 ?>
     </div>
   </div>
-  <div class="poster-pagers">
+  <div class="post-pagers">
 <?php
 global $wp_query;
+$big = 999999999;
 echo paginate_links(array(
   'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
   'format' => '?paged=%#%',
