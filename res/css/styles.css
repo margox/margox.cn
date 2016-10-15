@@ -936,6 +936,7 @@ input, button {
         color: #333; }
     .post-footer .metas .post-qrcode {
       position: absolute;
+      z-index: 10;
       right: 25px;
       bottom: 0;
       width: 150px;
