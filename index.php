@@ -13,10 +13,6 @@ if (have_posts()) {
 
   wp_reset_query();
 
-} else {
-
-  get_template_part('inc/content/content', '404');
-
 }
 ?>
     </div>

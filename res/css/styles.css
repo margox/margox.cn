@@ -913,6 +913,7 @@ input, button {
 
 .post-excerpt:empty,
 .post-content:empty {
+  margin-top: 0;
   margin-bottom: 0; }
   .post-excerpt:empty ~ .post-footer,
   .post-content:empty ~ .post-footer {
