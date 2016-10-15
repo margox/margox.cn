@@ -4,7 +4,14 @@ html,body{
   margin: 0;
   padding: 0;
 }
+html{
+  height: 100%;
+}
 body{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding-bottom: 153px;
   font-family: Helvetica, 'SourceHanSans', 'Microsoft Yahei';
   background-color: #fff;
   cursor: default;
@@ -22,6 +29,9 @@ input,button{
   }
 }
 
+.clearfix{
+  overflow: hidden;
+}
 .pull-left{
   float: left;
 }

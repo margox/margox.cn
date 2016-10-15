@@ -1,4 +1,5 @@
 .blog-header{
+  position: relative;
   height: 140px;
   margin-bottom: 70px;
   text-align: center;
@@ -14,7 +15,7 @@
       left: 0;
       width: 200px;
       height: 60px;
-      margin: 50px auto 0 auto;
+      margin: 55px auto 0 auto;
       overflow: hidden;
       text-align: center;
 
@@ -24,9 +25,8 @@
         font-size: 24px;
         font-weight: normal;
         font-style: italic;
-        line-height: 58px;
+        line-height: 60px;
         text-decoration: none;
-        border-bottom: solid 1px #666;
       }
 
     }
@@ -65,18 +65,49 @@
 
     }
 
-    .search{
+    .searcher{
+      position: relative;
       height: 40px;
       margin-top: 65px;
       text-align: right;
 
-      button{
+      input{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 120px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        color: #666;
+        font-size: 16px;
+        opacity: 0;
+        transition: .4s;
+        transform: translate3d(120px, 0, 0);
+
+        &:focus{
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+
+          & + label{
+            transform: translate3d(-120px, 0, 0);
+          }
+
+        }
+
+      }
+
+      label{
+        display: block;
         width: 40px;
         height: 40px;
         background: none;
         border: none;
         cursor: pointer;
         color: #999;
+        text-align: center;
+        line-height: 40px;
+        transition: transform .5s;
 
         &:hover{
           color: #333;
@@ -88,6 +119,25 @@
 
       }
 
+    }
+
+  }
+
+  .progress-bar{
+    position: absolute;
+    z-index: 1;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 0%;
+    background-image: linear-gradient(to right, #e74c3c, #f1c40f, #2ecc71);
+    background-size: 100vw 1px;
+    pointer-events: none;
+    transition: all .2s, opacity .4s, transform .4s;
+
+    &.completed{
+      opacity: 0;
+      transform: scaleY(10);
     }
 
   }
