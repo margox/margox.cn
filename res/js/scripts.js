@@ -36,7 +36,7 @@
 
     setTimeout(function() {
       progressBar.classList.add('completed')
-    }, 400)
+    }, 100)
 
   })
 

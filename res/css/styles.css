@@ -260,6 +260,7 @@ input, button {
     border-top: 0;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.1); }
     .blog-header .container {
+      height: 60px;
       margin: 0; }
     .blog-header .logo {
       height: 60px;
@@ -1142,10 +1143,15 @@ input, button {
 
 @media screen and (max-width: 480px) {
   .post {
-    margin-bottom: 20px; }
+    margin-bottom: 0; }
 
   .post-header {
-    margin-bottom: 20px; }
+    margin: 0 -20px 20px -20px;
+    padding: 20px;
+    border-bottom: .5px solid #e4e4e5; }
+
+  .format-gallery .post-header {
+    margin-bottom: 0; }
 
   .post-header .title,
   .single-post .post-header .title {
@@ -1155,47 +1161,50 @@ input, button {
   .single-post .post-header {
     margin-bottom: 30px; }
 
+  .post-list .format-image .post-featured-content {
+    margin-top: 0; }
+
   .format-gallery .post-featured-content {
-    height: 130px;
+    height: 170px;
     margin: 0 -20px;
-    padding: 10px 0;
     overflow: hidden;
-    border-top: .5px solid #e4e4e5;
     border-bottom: .5px solid #e4e4e5; }
 
   .post-featured-content .post-gallery {
     display: block;
     height: 180px;
-    margin: -10px 10px;
+    margin: 0;
+    padding: 0 5px;
     overflow: auto;
+    font-size: 0;
     white-space: nowrap; }
     .post-featured-content .post-gallery li {
       display: inline-block;
-      width: 150px; }
+      width: 150px;
+      margin: 10px 5px;
+      padding: 0; }
 
-  .post-excerpt {
-    margin-bottom: 0; }
+  .vudio-waveform-wrap {
+    display: none; }
 
   .post-footer {
     position: relative;
     margin: 0 -20px;
     padding: 0 20px;
-    border-top: none;
-    border-bottom: .5px solid #e4e4e5; }
-    .post-footer::after {
-      position: absolute;
-      top: -2.5px;
-      right: 20px;
-      margin: 15px;
-      content: "";
-      border: solid 5px transparent;
-      border-bottom-color: rgba(0, 0, 0, 0.1); }
+    border-top: 1px solid #e4e4e5;
+    border-bottom: 10px solid #f4f4f5; }
+    .post-footer.no-border {
+      margin-top: 20px;
+      border-top: .5px solid #e4e4e5; }
+    .post-footer .categories {
+      float: right; }
     .post-footer .btn-show-qrcode {
       display: none; }
 
   .post-pagers {
     margin-top: 0;
-    padding: 20px; }
+    padding: 20px;
+    border: none; }
     .post-pagers a, .post-pagers span {
       width: 30px;
       height: 30px;
@@ -1242,5 +1251,9 @@ input, button {
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase; }
+
+@media screen and (max-width: 480px) {
+  .blog-footer {
+    border: none; } }
 
 /*# sourceMappingURL=styles.css.map */

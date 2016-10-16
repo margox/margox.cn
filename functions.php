@@ -26,7 +26,7 @@ function theme_setup() {
     ));
 
     // 开启标题标签支持
-    // add_theme_support('title-tag');
+    add_theme_support('title-tag');
 
     // 开启缩略图支持并设定尺寸
     add_theme_support('post-thumbnails');
