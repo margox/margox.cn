@@ -1071,6 +1071,9 @@ input, button {
       text-decoration: none; }
       .post-footer .metas a:hover {
         color: #333; }
+    .post-footer .metas .date::after {
+      content: '/';
+      padding: 0 10px; }
     .post-footer .metas .post-qrcode {
       position: absolute;
       z-index: 10;
@@ -1196,6 +1199,8 @@ input, button {
     .post-footer.no-border {
       margin-top: 20px;
       border-top: .5px solid #e4e4e5; }
+    .post-footer .metas .date::after {
+      content: none; }
     .post-footer .categories {
       float: right; }
     .post-footer .btn-show-qrcode {

@@ -301,6 +301,11 @@
 
     }
 
+    .date::after{
+      content: '/';
+      padding: 0 10px;
+    }
+
     .post-qrcode{
       position: absolute;
       z-index: 10;
@@ -469,6 +474,10 @@
     &.no-border{
       margin-top: 20px;
       border-top: .5px solid #e4e4e5;     
+    }
+
+    .metas .date::after{
+      content: none;
     }
 
     .categories{
