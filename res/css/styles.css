@@ -1198,7 +1198,8 @@ input, button {
       width: 30px;
       height: 30px;
       margin: 10px;
-      line-height: 30px; }
+      line-height: 30px;
+      border-radius: 15px; }
 
   .post-navs {
     margin-top: 0;
