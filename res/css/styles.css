@@ -316,6 +316,7 @@ input, button {
           height: 50px;
           line-height: 50px; }
     .blog-header .searcher {
+      display: none;
       position: absolute;
       top: 0;
       right: 0;
