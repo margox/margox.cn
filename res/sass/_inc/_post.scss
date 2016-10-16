@@ -471,7 +471,15 @@
 
   .post-pagers{
     margin-top: 0;
-    padding: 30px;
+    padding: 20px;
+
+    a,span{
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+      line-height: 30px;
+    }
+
   }
 
   .post-navs{
