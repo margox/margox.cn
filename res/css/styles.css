@@ -1191,7 +1191,7 @@ input, button {
     position: relative;
     margin: 0 -20px;
     padding: 0 20px;
-    border-top: 1px solid #e4e4e5;
+    border-top: .5px solid #e4e4e5;
     border-bottom: 10px solid #f4f4f5; }
     .post-footer.no-border {
       margin-top: 20px;
