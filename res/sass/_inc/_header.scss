@@ -21,7 +21,7 @@
     text-align: center;
 
     a,span{
-      color: #666;
+      color: rgba(#000, .7);
       font-size: 24px;
       font-weight: normal;
       font-style: italic;
@@ -50,18 +50,18 @@
       &.current-menu-item{
 
         a{
-          color: #333;
+          color: rgba(#000, .8);
         }
 
       }
 
       a{
-        color: #999;
+        color: rgba(#000, .5);
         font-size: 16px;
         text-decoration: none;
 
         &:hover{
-          color: #333;
+          color: rgba(#000, .8);
         }
 
       }
@@ -90,7 +90,7 @@
       padding: 0;
       background-color: transparent;
       border: none;
-      color: #666;
+      color: rgba(#000, .6);
       font-size: 16px;
       background-color: #fff;
       opacity: 0;
@@ -119,7 +119,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: #999;
+      color: rgba(#000, .5);
       text-align: center;
       font-size: 16px;
       line-height: 40px;
@@ -200,7 +200,7 @@
     .logo{
       height: 60px;
       margin-top: 0;
-      color: #333;
+      color: rgba(#000, .8);
 
       a, span{
         display: block;
@@ -230,7 +230,7 @@
       float: left;
       width: 60px;
       height: 60px;
-      color: #999;
+      color: rgba(#000, .5);
       font-size: 18px;
       text-align: center;
       line-height: 60px;
@@ -244,6 +244,7 @@
       width: 100%;
       height: auto;
       margin: 0;
+      background-color: #fff;
       border-bottom: .5px solid rgba(0,0,0,.1);
       opacity: 0;
       pointer-events: none;

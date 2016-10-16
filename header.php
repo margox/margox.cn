@@ -26,7 +26,7 @@ if ($blog_description && (is_home() || is_front_page())) {
       <h1 class="logo"><span>I am Margox</span></h1>
       <input id="J-mobile-menu-trigger-input" class="mobile-menu-trigger-input" type="checkbox">
       <label for="J-mobile-menu-trigger-input" class="mobile-menu-trigger iconfont icon-menu"></label>
-      <ul class="menu blured-backdrop-light pull-left">
+      <ul class="menu pull-left">
 <?php
 $menuParameters = array(
   'theme_location' => 'primary-menu',

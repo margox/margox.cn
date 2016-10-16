@@ -151,7 +151,7 @@ input, button {
     overflow: hidden;
     text-align: center; }
     .blog-header .logo a, .blog-header .logo span {
-      color: #666;
+      color: rgba(0, 0, 0, 0.7);
       font-size: 24px;
       font-weight: normal;
       font-style: italic;
@@ -170,13 +170,13 @@ input, button {
       margin-right: 60px;
       line-height: 40px; }
       .blog-header .menu li.current-menu-item a {
-        color: #333; }
+        color: rgba(0, 0, 0, 0.8); }
       .blog-header .menu li a {
-        color: #999;
+        color: rgba(0, 0, 0, 0.5);
         font-size: 16px;
         text-decoration: none; }
         .blog-header .menu li a:hover {
-          color: #333; }
+          color: rgba(0, 0, 0, 0.8); }
   .blog-header .searcher {
     position: relative;
     width: 160px;
@@ -194,7 +194,7 @@ input, button {
       padding: 0;
       background-color: transparent;
       border: none;
-      color: #666;
+      color: rgba(0, 0, 0, 0.6);
       font-size: 16px;
       background-color: #fff;
       opacity: 0;
@@ -215,7 +215,7 @@ input, button {
       background: none;
       border: none;
       cursor: pointer;
-      color: #999;
+      color: rgba(0, 0, 0, 0.5);
       text-align: center;
       font-size: 16px;
       line-height: 40px;
@@ -265,7 +265,7 @@ input, button {
     .blog-header .logo {
       height: 60px;
       margin-top: 0;
-      color: #333; }
+      color: rgba(0, 0, 0, 0.8); }
       .blog-header .logo a, .blog-header .logo span {
         display: block;
         height: 60px;
@@ -285,7 +285,7 @@ input, button {
       float: left;
       width: 60px;
       height: 60px;
-      color: #999;
+      color: rgba(0, 0, 0, 0.5);
       font-size: 18px;
       text-align: center;
       line-height: 60px; }
@@ -297,6 +297,7 @@ input, button {
       width: 100%;
       height: auto;
       margin: 0;
+      background-color: #fff;
       border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
       opacity: 0;
       pointer-events: none;

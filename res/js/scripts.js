@@ -38,8 +38,34 @@
       progressBar.classList.add('completed')
     }, 100)
 
-  })
+  });
 
+  // 相册处理
+  [].forEach.call($all('[data-lightbox]'), function(item, index) {
+
+    item.addEventListener('click', function(e) {
+
+      // 在微信里面，调用微信的幻灯片接口
+      if (typeof wx !== 'undefined') {
+
+        var group = this.dataset.lightbox
+        var current = this.href
+        var images = [].map.call($all('[data-lightbox="' + group + '"]'), function(image) {
+          return image.href
+        })
+
+        wx.previewImage({  
+            'current': current,  
+            'urls': images  
+        })
+
+        e.preventDefault()
+
+      }
+
+    })
+
+  })
 
   // 音频播放器处理
   var playerObjs = []
