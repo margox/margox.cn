@@ -84,7 +84,16 @@ input,button{
 @media #{$phone-screen} {
 
   body{
-    padding-top: 90px;
+    padding-top: 70px;
+  }
+
+  .blog-body::before{
+    display: block;
+    width: 100vw;
+    height: 10px;
+    margin: -10px -20px 0 -20px;
+    background-color: #f4f4f5;
+    content: '';
   }
 
   .container{
