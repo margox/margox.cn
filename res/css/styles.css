@@ -1108,7 +1108,6 @@ input, button {
   .post-pagers a, .post-pagers span {
     display: inline-block;
     box-sizing: border-box;
-    min-width: 50px;
     margin: 0 10px;
     padding: 0 10px;
     color: #999;
