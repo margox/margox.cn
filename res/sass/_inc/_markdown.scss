@@ -104,7 +104,7 @@
     overflow: hidden;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: .5px solid #ddd;
 }
 
 .markdown-body hr:before {
@@ -291,7 +291,7 @@
     padding-bottom: 0.3em;
     font-size: 2.25em;
     line-height: 1.2;
-    border-bottom: 1px solid #eee;
+    border-bottom: .5px solid #eee;
 }
 
 .markdown-body h1 .anchor {
@@ -302,7 +302,7 @@
     padding-bottom: 0.3em;
     font-size: 1.75em;
     line-height: 1.225;
-    border-bottom: 1px solid #eee;
+    border-bottom: .5px solid #eee;
 }
 
 .markdown-body h2 .anchor {
@@ -425,12 +425,12 @@
 .markdown-body table th,
 .markdown-body table td {
     padding: 6px 13px;
-    border: 1px solid #ddd;
+    border: .5px solid #ddd;
 }
 
 .markdown-body table tr {
     background-color: #fff;
-    border-top: 1px solid #ccc;
+    border-top: .5px solid #ccc;
 }
 
 .markdown-body table tr:nth-child(2n) {
@@ -517,7 +517,7 @@
     color: #555;
     vertical-align: middle;
     background-color: #fcfcfc;
-    border: solid 1px #ccc;
+    border: solid .5px #ccc;
     border-bottom-color: #bbb;
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #bbb;
@@ -630,7 +630,7 @@
     color: #555;
     vertical-align: middle;
     background-color: #fcfcfc;
-    border: solid 1px #ccc;
+    border: solid .5px #ccc;
     border-bottom-color: #bbb;
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 #bbb;

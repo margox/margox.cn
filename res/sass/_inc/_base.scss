@@ -1,4 +1,10 @@
 $content_width: 980px;
+$phone-screen: "screen and (max-width: 480px)";
+$tablet-screen: "screen and (max-width: 980px)";
+
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 html,body{
   margin: 0;
@@ -23,10 +29,33 @@ input,button{
 
 .container{
   width: $content_width;
+  max-width: 100%;
   margin: {
     right: auto;
     left: auto;
   }
+
+}
+
+.blured-backdrop-light{
+  background-color: #fff; 
+}
+.blured-backdrop-dark{
+  background-color: #333;
+}
+
+.backdrop-filter-supported{
+
+  .blured-backdrop-light{
+    background-color: rgba(#fff, .5);
+    -webkit-backdrop-filter: blur(30px);
+  }
+
+  .blured-backdrop-dark{
+    background-color: rgba(#000, .5);
+    -webkit-backdrop-filter: blur(30px);
+  }
+
 }
 
 .clearfix{
@@ -37,4 +66,31 @@ input,button{
 }
 .pull-right{
   float: right;
+}
+
+@media #{$tablet-screen} {
+
+  .container{
+    width: auto;
+    margin: {
+      right: 30px;
+      left: 30px;
+    }
+  }
+
+}
+
+@media #{$phone-screen} {
+
+  body{
+    padding-top: 90px;
+  }
+
+  .container{
+    margin: {
+      right: 20px;
+      left: 20px;
+    }
+  }
+
 }

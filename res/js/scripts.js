@@ -3,7 +3,9 @@
   var $ = document.querySelector.bind(document)
   var $all = document.querySelectorAll.bind(document)
 
-
+  if (document.body.style.webkitBackdropFilter !== undefined) {
+    document.body.classList.add('backdrop-filter-supported')
+  }
 
   // 顶部进度条处理
   var progress = 0

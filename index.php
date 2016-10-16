@@ -17,8 +17,7 @@ if (have_posts()) {
 ?>
     </div>
   </div>
-  <div class="post-pagers">
-<?php
+  <div class="post-pagers"><?php
 global $wp_query;
 $big = 999999999;
 echo paginate_links(array(
@@ -30,6 +29,5 @@ echo paginate_links(array(
   'prev_text' => '<i class="iconfont icon-xiangzuo1"></i>',
   'next_text' => '<i class="iconfont icon-xiangyou1"></i>'
 ));
-?>
-  </div>
+?></div>
 <?php get_footer();?>
