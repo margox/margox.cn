@@ -35,7 +35,7 @@ input, button {
   background-color: #333; }
 
 .backdrop-filter-supported .blured-backdrop-light {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(30px); }
 .backdrop-filter-supported .blured-backdrop-dark {
   background-color: rgba(0, 0, 0, 0.5);
