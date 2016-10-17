@@ -26,8 +26,8 @@ echo paginate_links(array(
   'current' => max(1, get_query_var('paged')),
   'total' => $wp_query->max_num_pages,
   'prev_next' => true,
-  'prev_text' => '<i class="iconfont icon-xiangzuo1"></i>',
-  'next_text' => '<i class="iconfont icon-xiangyou1"></i>'
+  'prev_text' => '<i class="iconfont icon-left"></i>',
+  'next_text' => '<i class="iconfont icon-right"></i>'
 ));
 ?></div>
 <?php get_footer();?>

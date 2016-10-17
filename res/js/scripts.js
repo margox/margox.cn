@@ -1,7 +1,11 @@
--function() {
+-function(undefined) {
 
   var $ = document.querySelector.bind(document)
   var $all = document.querySelectorAll.bind(document)
+
+  if (document.ontouchstart !== undefined) {
+    document.body.classList.add('touchable-screen')
+  }
 
   if (document.body.style.webkitBackdropFilter !== undefined) {
     document.body.classList.add('backdrop-filter-supported')
@@ -45,23 +49,18 @@
 
     item.addEventListener('click', function(e) {
 
-      // 在微信里面，调用微信的幻灯片接口
-      if (typeof wx !== 'undefined') {
 
-        var group = this.dataset.lightbox
-        var current = this.href
-        var images = [].map.call($all('[data-lightbox="' + group + '"]'), function(image) {
-          return image.href
-        })
+      var group = $all('[data-lightbox="' + this.dataset.lightbox + '"]')
+      var current = [].indexOf.call(group, this)
+      var images = [].map.call(group, function(image) {
+        return {
+          src: image.href,
+          title: image.dataset.title
+        }
+      })
 
-        wx.previewImage({  
-            'current': current,  
-            'urls': images  
-        })
-
-        e.preventDefault()
-
-      }
+      lightBox(current, images)
+      e.preventDefault()
 
     })
 

@@ -24,7 +24,7 @@ body{
   cursor: default;
   -webkit-font-smoothing: antialiased;
 }
-input,button{
+input, button{
   outline: none;
 }
 
@@ -35,7 +35,6 @@ input,button{
     right: auto;
     left: auto;
   }
-
 }
 
 .blured-backdrop-light{
@@ -68,6 +67,8 @@ input,button{
 .pull-right{
   float: right;
 }
+
+@import 'lightbox';
 
 @media #{$tablet-screen} {
 

@@ -100,15 +100,15 @@ add_action('init', 'remove_open_sans_from_wp_core');
 function enqueue_assets() {
 
     // 加载JS
-    wp_enqueue_script('margox-vudio', __RES__ . 'js/libs/vudio.js', false, '0.0.1', true);
-    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.3', true);
-
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {
         wp_enqueue_script('margox-weixin', __RES__ . 'js/libs/weixin-sdk.js', false, '1.0.0', true);
     }
+    wp_enqueue_script('margox-vudio', __RES__ . 'js/libs/vudio.js', false, '0.0.1', true);
+    wp_enqueue_script('margox-lightbox', __RES__ . 'js/libs/lightbox.js', false, '1.0.1', true);
+    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.4', true);
 
     // 加载CSS
-    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.6');
+    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.7');
 
 }
 add_action('wp_enqueue_scripts', 'enqueue_assets');
@@ -149,7 +149,7 @@ function margox_get_post_gallery($postid = null) {
 
             $image_a = explode("|", $urls);
             $image_id = $image_a[2];
-            $image_caption = get_the_title($image_id);
+            $image_title = get_the_title($image_id);
 
             $image_url = wp_get_attachment_image_src($image_id, 'image-large');
             $image_url = $image_url[0];
@@ -162,8 +162,8 @@ function margox_get_post_gallery($postid = null) {
             if (!empty($image_url)) {
                 $html .= '
                 <li>
-                    <a href="' . $image_url . '" target="_blank" data-lightbox="margox-post-gallery-' . $postid . '">
-                        <img src="' . str_replace(array('http:', 'https:'), '', $image_thumbnail_url) . '">
+                    <a href="' . $image_url . '" data-title="' . $image_title . '" target="_blank" data-lightbox="margox-post-gallery-' . $postid . '">
+                        <img alt="' . $image_title . '" src="' . str_replace(array('http:', 'https:'), '', $image_thumbnail_url) . '">
                     </a>
                 </li>
                 ';

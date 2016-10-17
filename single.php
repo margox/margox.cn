@@ -27,8 +27,8 @@ if ( comments_open() ) {
 ?>
   </div>
 <?php
-$prev_post = get_previous_post_link('%link', '<i class="iconfont icon-xiangzuo1"></i> %title');
-$next_post = get_next_post_link('%link', '%title <i class="iconfont icon-xiangyou1"></i>');
+$prev_post = get_previous_post_link('%link', '<i class="iconfont icon-left"></i> %title');
+$next_post = get_next_post_link('%link', '%title <i class="iconfont icon-right"></i>');
 if ($prev_post || $next_post) {
 ?>
   <div class="post-navs">

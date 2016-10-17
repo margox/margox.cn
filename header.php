@@ -23,7 +23,7 @@ if ($blog_description && (is_home() || is_front_page())) {
 <body <?php body_class();?>>
   <header class="blog-header blured-backdrop-light">
     <div class="container">
-      <h1 class="logo"><span>I am Margox</span></h1>
+      <h1 class="logo"><span>超能刚哥</span></h1>
       <input id="J-mobile-menu-trigger-input" class="mobile-menu-trigger-input" type="checkbox">
       <label for="J-mobile-menu-trigger-input" class="mobile-menu-trigger iconfont icon-menu"></label>
       <ul class="menu pull-left">
