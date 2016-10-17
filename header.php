@@ -7,7 +7,7 @@
 <meta name="x5-page-mode" content="app">
 <meta name="x5-fullscreen" content="true">
 <meta charset="<?php bloginfo('charset');?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <title><?php wp_title('|', true, 'right');?></title>
 <?php
 $blog_description = get_bloginfo('description');
