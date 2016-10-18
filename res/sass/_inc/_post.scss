@@ -405,6 +405,14 @@
 
 }
 
+@media #{$tablet-screen} {
+  
+  .vudio-waveform-wrap{
+    display: none;
+  }
+
+}
+
 @media #{$phone-screen} {
 
   .post{
@@ -431,8 +439,12 @@
     margin-bottom: 30px;
   }
 
+  .single-post .format-gallery .post-header{
+    margin-bottom: 0;
+  }
+
   .post-list .format-image .post-featured-content{
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   .format-gallery .post-featured-content{
@@ -450,6 +462,7 @@
     overflow: auto;
     font-size: 0;
     white-space: nowrap;
+    background-color: #f8f8f9;
 
     li{
       display: inline-block;
@@ -458,10 +471,6 @@
       padding: 0;
     }
 
-  }
-
-  .vudio-waveform-wrap{
-    display: none;
   }
 
   .post-footer{

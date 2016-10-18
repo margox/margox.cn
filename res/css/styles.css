@@ -1252,6 +1252,9 @@ input, button {
     .post-navs a:hover {
       color: #333; }
 
+@media screen and (max-width: 980px) {
+  .vudio-waveform-wrap {
+    display: none; } }
 @media screen and (max-width: 480px) {
   .post {
     margin-bottom: 0; }
@@ -1272,8 +1275,11 @@ input, button {
   .single-post .post-header {
     margin-bottom: 30px; }
 
+  .single-post .format-gallery .post-header {
+    margin-bottom: 0; }
+
   .post-list .format-image .post-featured-content {
-    margin-top: 0; }
+    margin-top: 20px; }
 
   .format-gallery .post-featured-content {
     height: 170px;
@@ -1288,15 +1294,13 @@ input, button {
     padding: 0 5px;
     overflow: auto;
     font-size: 0;
-    white-space: nowrap; }
+    white-space: nowrap;
+    background-color: #f8f8f9; }
     .post-featured-content .post-gallery li {
       display: inline-block;
       width: 150px;
       margin: 10px 5px;
       padding: 0; }
-
-  .vudio-waveform-wrap {
-    display: none; }
 
   .post-footer {
     position: relative;
