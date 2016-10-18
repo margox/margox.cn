@@ -151,8 +151,7 @@ input, button {
   height: 80px;
   padding: 16px;
   background-color: #fff;
-  border: .5px solid #ccc;
-  box-shadow: 0 0 0 5px #f4f4f5; }
+  border: .5px solid #ccc; }
   .margox-audio-player .cover,
   .margox-audio-player .caption,
   .margox-audio-player .sub-caption,
