@@ -50,11 +50,6 @@ input, button {
 .pull-right {
   float: right; }
 
-.cnzz {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none; }
-
 .margox-lightbox {
   display: none;
   position: fixed;
