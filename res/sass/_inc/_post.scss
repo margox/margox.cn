@@ -55,16 +55,16 @@
   .featured-image{
     display: block;
     overflow: hidden;
+    background-color: #333;
 
     img {
       display: block;
       max-width: 100%;
       height: auto;
-      transition: .4s;
     }
 
     &:hover img{
-      transform: scale(1.1);
+      opacity: .8;
     }
 
   }
@@ -91,6 +91,7 @@
         display: block;
         padding-bottom: 100%;
         overflow: hidden;
+        background-color: #333;
 
         img{
           position: absolute;
@@ -100,11 +101,10 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: .4s;
         }
 
         &:hover img{
-          transform: scale(1.1);
+          opacity: .8;
         }
 
       }

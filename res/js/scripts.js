@@ -42,6 +42,16 @@
       progressBar.classList.add('completed')
     }, 100)
 
+  }, false);
+
+  // 图片渐现特效处理
+  [].forEach.call($all('.fade-image'), function(item) {
+
+    item.src = item.dataset.src
+    item.onload = function() {
+      this.classList.add('loaded')
+    }
+
   });
 
   // 相册处理

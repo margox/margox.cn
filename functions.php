@@ -104,10 +104,10 @@ function enqueue_assets() {
         wp_enqueue_script('margox-weixin', __RES__ . 'js/libs/weixin-sdk.js', false, '1.0.0', true);
     }
     wp_enqueue_script('margox-lightbox', __RES__ . 'js/libs/lightbox.js', false, '1.0.1', true);
-    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.6', true);
+    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.7', true);
 
     // 加载CSS
-    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.12');
+    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.13');
 
 }
 add_action('wp_enqueue_scripts', 'enqueue_assets');
@@ -162,7 +162,7 @@ function margox_get_post_gallery($postid = null) {
                 $html .= '
                 <li>
                     <a href="' . $image_url . '" data-title="' . $image_title . '" target="_blank" data-lightbox="margox-post-gallery-' . $postid . '">
-                        <img alt="' . $image_title . '" src="' . str_replace(array('http:', 'https:'), '', $image_thumbnail_url) . '">
+                        <img class="fade-image" alt="' . $image_title . '" data-src="' . str_replace(array('http:', 'https:'), '', $image_thumbnail_url) . '">
                     </a>
                 </li>
                 ';

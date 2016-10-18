@@ -68,6 +68,18 @@ input, button{
   float: right;
 }
 
+.fade-image{
+  opacity: 0;
+  transition: .4s;
+  transform: translate3d(0, 20px, 0) scale(.95);
+
+  &.loaded{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+}
+
 @import 'lightbox';
 @import 'player';
 @import 'markdown';
