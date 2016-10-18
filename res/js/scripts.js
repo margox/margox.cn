@@ -49,7 +49,6 @@
 
     item.addEventListener('click', function(e) {
 
-
       var group = $all('[data-lightbox="' + this.dataset.lightbox + '"]')
       var current = [].indexOf.call(group, this)
       var images = [].map.call(group, function(image) {
@@ -60,7 +59,9 @@
       })
 
       lightBox(current, images)
+
       e.preventDefault()
+      return false
 
     })
 

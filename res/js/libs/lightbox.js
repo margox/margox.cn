@@ -23,7 +23,7 @@
   var isMQQ = false
   var isUC = false
 
-  if (/MicroMessenger/.test(ua)) {
+  if (/MicroMessenger/.test(ua) && (typeof wx !== 'undefined')) {
     isWeixin = true
   }
 
