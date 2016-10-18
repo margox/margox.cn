@@ -374,7 +374,9 @@
 
   .post-pagers{
     margin-top: 0;
-    padding: 20px 10px;
+    padding: 20px 0 20px 10px;
+    overflow: auto;
+    white-space: nowrap;
     border: none;
 
     a,span{
