@@ -103,12 +103,11 @@ function enqueue_assets() {
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {
         wp_enqueue_script('margox-weixin', __RES__ . 'js/libs/weixin-sdk.js', false, '1.0.0', true);
     }
-    wp_enqueue_script('margox-vudio', __RES__ . 'js/libs/vudio.js', false, '0.0.1', true);
     wp_enqueue_script('margox-lightbox', __RES__ . 'js/libs/lightbox.js', false, '1.0.1', true);
-    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.4', true);
+    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.6', true);
 
     // 加载CSS
-    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.8');
+    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.9');
 
 }
 add_action('wp_enqueue_scripts', 'enqueue_assets');

@@ -1,0 +1,113 @@
+.margox-audio-player{
+  position: relative;
+  height: 80px;
+  padding: 16px;
+  background-color: #fff;
+  border: .5px solid #ccc;
+  box-shadow: 0 0 0 5px #f4f4f5;
+
+  .cover,
+  .caption,
+  .sub-caption,
+  .progress{
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover{
+    position: relative;
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #222;
+    background-size: cover;
+
+    .btn-play-pause{
+      display: block;
+      width: 80px;
+      height: 80px;
+      border: none;
+      text-decoration: none;
+      background-color: rgba(#000, .5);
+
+      i{
+        display: block;
+        width: 80px;
+        height: 80px;
+        color: #fff;
+        font-size: 24px;
+        line-height: 80px;
+        text-align: center;
+
+        &.icon-pause{
+          display: none;
+        }
+
+      }
+
+      &.playing{
+
+        .icon-play{
+          display: none;
+        }
+
+        .icon-pause{
+          display: block;
+        }
+
+      }
+
+    }
+
+  }
+
+  .caption,
+  .sub-caption{
+    margin: 5px 0 2px 96px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .caption{    
+    color: #666;
+    font-size: 14px;
+  }
+
+  .sub-caption{
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .progress{
+    margin: 12px 0 0 96px;
+    overflow: hidden;
+
+    span{
+      height: 15px;
+      color: #aaa;
+      line-height: 16px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .progress-bar{
+      display: block;
+      box-sizing: border-box;
+      height: 2px;
+      margin: 7px 45px;
+      background-color: #ccc;
+      border-left: solid 0 #aaa;
+    }
+
+    .played-time{
+      float: left;
+    }
+
+    .total-time{
+      float: right;
+    }
+
+  }
+
+}

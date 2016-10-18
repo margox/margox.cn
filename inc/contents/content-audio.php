@@ -16,7 +16,7 @@ if (!is_singular()) {
 $post_audio = margox_get_post_audio($post->ID);
 $post_audio = explode('|', $post_audio);
 ?>
-          <div class="post-audio" id="post-audio-<?php echo $post->ID;?>">
+          <div class="post-audio margox-audio-player" id="post-audio-<?php echo $post->ID;?>">
             <div class="post-audio-obj" data-id="<?php echo $post->ID;?>" data-audio="<?php echo $post_audio[0];?>"></div>
 <?php
 if (has_post_thumbnail()) {
@@ -42,9 +42,6 @@ if (has_post_thumbnail()) {
               <span class="played-time">00:00</span>
               <span class="total-time">00:00</span>
               <span class="progress-bar"></span>
-            </div>
-            <div class="vudio-waveform-wrap">
-              <canvas width="980px" height="60px" class="vudio-waveform"></canvas>
             </div>
           </div>
         </div>

@@ -68,30 +68,14 @@
   })
 
   // 音频播放器处理
-  var playerObjs = []
-  var vudioOptions = {
-    width: 512,
-    height: 50,
-    accuracy: 256,
-    waveform: {
-      maxHeight: 40,
-      minHeight: 0,
-      fadeSide: false,
-      spacing: 1,
-      horizontalAlign: 'center',
-      verticalAlign: 'bottom',
-      color: '#f39c12'
-    }
-  };
+  var playerObjs = [];
 
   [].forEach.call($all('.post-audio-obj'), function(item) {
 
-    var vudio_obj = null
     var player_id = item.dataset.id
     var player_obj = new Audio()
     var player_src= item.dataset.audio
     var player_wrap = $('#post-audio-' + player_id)
-    var player_waveform_canvas = player_wrap.querySelector('.vudio-waveform')
     var player_btn = player_wrap.querySelector('.btn-play-pause')
     var player_played = player_wrap.querySelector('.played-time')
     var player_total = player_wrap.querySelector('.total-time')
@@ -99,11 +83,6 @@
     var player_bar_width = player_bar.getBoundingClientRect().width
     var player_status = 'stop'
     var player_timmer
-
-    var vudio_obj = window.chrome ? new Vudio(player_obj, player_waveform_canvas, vudioOptions) : {
-      dance: function() {},
-      play: function() {}
-    }
 
     window.addEventListener('resize', function() {
       player_bar_width = player_bar.getBoundingClientRect().width
@@ -114,7 +93,6 @@
       player_btn.classList.add('playing')
       player_total.innerText = sec2min(player_obj.duration)
       playingFunc()
-      vudio_obj.dance()
     })
 
     player_obj.addEventListener('pause', function() {

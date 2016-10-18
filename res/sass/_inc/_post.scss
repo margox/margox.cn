@@ -113,129 +113,6 @@
 
   }
 
-  .post-audio{
-    position: relative;
-    height: 80px;
-    padding: 16px;
-    background-color: #333;
-
-    .cover,
-    .caption,
-    .sub-caption,
-    .progress{
-      position: relative;
-      z-index: 1;
-    }
-
-    .cover{
-      position: relative;
-      float: left;
-      width: 80px;
-      height: 80px;
-      background-color: #222;
-      background-size: cover;
-
-      .btn-play-pause{
-        display: block;
-        width: 80px;
-        height: 80px;
-        border: none;
-        text-decoration: none;
-        background-color: rgba(#000, .5);
-
-        i{
-          display: block;
-          width: 80px;
-          height: 80px;
-          color: #fff;
-          font-size: 24px;
-          line-height: 80px;
-          text-align: center;
-
-          &.icon-pause{
-            display: none;
-          }
-
-        }
-
-        &.playing{
-
-          .icon-play{
-            display: none;
-          }
-
-          .icon-pause{
-            display: block;
-          }
-
-        }
-
-      }
-
-    }
-
-    .caption,
-    .sub-caption{
-      margin: 9px 0 6px 96px;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .caption{    
-      color: #999;
-      font-size: 14px;
-    }
-
-    .sub-caption{
-      color: #666;
-      font-size: 12px;
-      font-weight: normal;
-    }
-
-    .progress{
-      margin: 9px 0 0 96px;
-      overflow: hidden;
-
-      span{
-        height: 15px;
-        color: rgba(#fff, .5);
-        line-height: 16px;
-        font-size: 12px;
-        font-weight: bold;
-      }
-
-      .progress-bar{
-        display: block;
-        box-sizing: border-box;
-        height: 2px;
-        margin: 7px 45px;
-        background-color: #222;
-        border-left: solid 0 rgba(#fff, .5);
-      }
-
-      .played-time{
-        float: left;
-      }
-
-      .total-time{
-        float: right;
-      }
-
-    }
-
-    .vudio-waveform-wrap{
-      position: absolute;
-      z-index: 0;
-      right: 60px;
-      bottom: 27px;
-      width: 512px;
-      height: 50px;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-  }
-
 }
 
 .post-excerpt{
@@ -263,8 +140,6 @@
   }
 
 }
-
-@import './markdown';
 
 .post-excerpt:empty,
 .post-content:empty{
@@ -360,7 +235,7 @@
   a,span{
     display: inline-block;
     box-sizing: border-box;
-    width: 50px;
+    min-width: 50px;
     height: 50px;
     margin: 0 10px;
     padding: 0 10px;
@@ -370,18 +245,16 @@
     text-align: center;
     line-height: 50px;
     text-decoration: none;
-    background-color: #fff;
-    border: solid .5px #fff;
+    background-color: #f4f4f5;
   }
 
   a:hover{
-    border-color: #e4e4e5;
+    background-color: #e4e4e5;
   }
 
   .current{
     color: #fff;
     background-color: #999;
-    border-radius: 25px;
   }
 
 }
@@ -501,16 +374,11 @@
 
   .post-pagers{
     margin-top: 0;
-    padding: 20px;
+    padding: 20px 10px;
     border: none;
 
     a,span{
-      width: 30px;
-      height: 30px;
-      margin: 10px;
-      line-height: 28px;
-      font-size: 12px;
-      border-radius: 15px;
+      margin: 10px 5px;
     }
 
   }
