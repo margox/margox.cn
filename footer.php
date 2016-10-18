@@ -3,6 +3,6 @@
     <div class="copyright">&copy; <?php echo date('Y');?> margox.cn</div>
   </footer>
 <?php wp_footer();?>
-<script src="https://s11.cnzz.com/stat.php?id=1260617397&web_id=1260617397" language="JavaScript"></script>
+<script src="//s11.cnzz.com/stat.php?id=1260617397&web_id=1260617397" language="JavaScript"></script>
 </body>
 </html>

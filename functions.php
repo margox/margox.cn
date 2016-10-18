@@ -194,7 +194,7 @@ function margox_get_post_audio($postid = null) {
 // 生产二维码
 function margox_generate_qrcode($data) {
 
-    return 'http://api.qrserver.com/v1/create-qr-code/?color=222222&bgcolor=FFFFFF&qzone=1&margin=0&size=400x400&ecc=L&data=' . $data;
+    return '//api.qrserver.com/v1/create-qr-code/?color=222222&bgcolor=FFFFFF&qzone=1&margin=0&size=400x400&ecc=L&data=' . $data;
 
 }
 
