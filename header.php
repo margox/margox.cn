@@ -4,6 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="transparent">
 <meta name="x5-page-mode" content="app">
 <meta name="x5-fullscreen" content="true">
 <meta charset="<?php bloginfo('charset');?>">
