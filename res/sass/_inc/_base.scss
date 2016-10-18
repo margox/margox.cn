@@ -68,6 +68,10 @@ input, button{
   float: right;
 }
 
+.cnzz{
+  display: none;
+}
+
 @import 'lightbox';
 
 @media #{$tablet-screen} {
