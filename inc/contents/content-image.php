@@ -13,7 +13,7 @@ if (has_post_thumbnail()) {
 ?>
         <div class="post-featured-content">
           <a href="<?php the_permalink();?>" class="featured-image">
-            <img class="fade-image" width="<?php echo $img_src[1];?>" height="<?php echo $img_src[2];?>" data-src="<?php echo $img_src[0];?>" alt="<?php the_title();?>"/>
+            <img onload="javascript:this.classList.add('loaded');" class="fade-image" width="<?php echo $img_src[1];?>" height="<?php echo $img_src[2];?>" src="<?php echo $img_src[0];?>" alt="<?php the_title();?>"/>
           </a>
         </div>
 <?php
