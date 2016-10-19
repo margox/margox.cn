@@ -194,7 +194,7 @@
     imagesLength = images.length
 
     var imagesHTML = images.map(function(image, index) {
-      return '<li data-index="' + index + '"><span>' + image.title + '</span><img src="' + image.src + '" alt="' + image.title + '"/></li>'
+      return '<li data-index="' + index + '"><span>' + image.title + '</span><img class="fade-image" onload="javascript:this.classList.add(\'loaded\');" src="' + image.src + '" alt="' + image.title + '"/></li>'
     }).join('')
 
     elements.list.innerHTML = imagesHTML
