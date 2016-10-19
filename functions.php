@@ -397,7 +397,7 @@ add_action('add_meta_boxes', 'margox_add_metaboxes');
 add_action('save_post', 'margox_save_metas');
 
 // 日期格式化
-function format_date ($timeInt, $format = 'Y年m月d日') {
+function format_date($timeInt, $format = 'Y-m-d') {
 
     $timeInt = strtotime($timeInt);
     if ($timeInt === 0) {

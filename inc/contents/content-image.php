@@ -26,7 +26,7 @@ if (is_singular()) {
 ?>
         <footer class="post-footer no-border">
           <div class="metas">
-            <div class="date pull-left"><?php the_time(get_option('date_format'));?></div>
+            <div class="date pull-left"><?php echo format_date(get_the_time("Y-m-d H:i:s"));?></div>
             <div class="categories pull-left"><?php the_category(',', 'single');?></div>
             <div class="share pull-right"><a href="javascript:void(0);" class="btn-show-qrcode"><i class="iconfont icon-qrcode"></i></a><div class="post-qrcode"><img src="<?php echo margox_generate_qrcode(urlencode(get_permalink()));?>"></div></div>
           </div>
