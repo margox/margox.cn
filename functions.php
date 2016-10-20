@@ -105,10 +105,10 @@ function enqueue_assets() {
     }
     wp_enqueue_script('margox-highlight', __RES__ . 'js/libs/highlight/highlight.pack.js', false, '1.0.0', true);
     wp_enqueue_script('margox-lightbox', __RES__ . 'js/libs/lightbox.js', false, '1.0.1', true);
-    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.9', true);
+    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.10', true);
 
     // 加载CSS
-    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.14');
+    wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.15');
     wp_enqueue_style('margox-highlight-github', __RES__ . 'js/libs/highlight/styles/github.css', false, '1.0.0');
 
 }
