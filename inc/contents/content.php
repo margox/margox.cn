@@ -2,7 +2,7 @@
         <header class="post-header">
 <?php
 $is_singular = is_singular();
-if ($is_singular) {
+if (!$is_singular) {
 ?>
           <h3 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
 <?php

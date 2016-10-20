@@ -1291,7 +1291,6 @@ input, button {
     margin-top: 20px; }
 
   .post-gallery-wrap {
-    padding: 0 5px;
     border-top: .5px solid #e4e4e5; }
 
   .post-gallery-wrap,
@@ -1303,7 +1302,7 @@ input, button {
 
   .post-gallery {
     display: block;
-    height: 180px;
+    height: 190px;
     margin: 0;
     padding: 0 5px;
     overflow: auto;
@@ -1315,6 +1314,10 @@ input, button {
       width: 150px;
       margin: 10px 5px;
       padding: 0; }
+
+  .markdown-body .post-gallery {
+    margin: 0;
+    padding: 0 5px; }
 
   .post-footer {
     position: relative;

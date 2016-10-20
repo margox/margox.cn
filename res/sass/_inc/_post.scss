@@ -325,7 +325,6 @@
   }
 
   .post-gallery-wrap{
-    padding: 0 5px;
     border-top: .5px solid #e4e4e5;
   }
   .post-gallery-wrap,
@@ -338,7 +337,7 @@
 
   .post-gallery{
     display: block;
-    height: 180px;
+    height: 190px;
     margin: 0;
     padding: 0 5px;
     overflow: auto;
@@ -353,6 +352,10 @@
       padding: 0;
     }
 
+  }
+  .markdown-body .post-gallery{
+    margin: 0;
+    padding: 0 5px;
   }
 
   .post-footer{
