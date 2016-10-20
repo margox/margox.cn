@@ -7,6 +7,25 @@
     document.body.classList.add('touchable-screen')
   }
 
+  // 按需开启FastClick
+  !FastClick.notNeeded(document.body) && FastClick.attach(document.body)
+
+  // 按需开启hariline支持
+  if (window.devicePixelRatio && devicePixelRatio >= 2) {
+
+    var testElem = document.createElement('div')
+    testElem.style.border = '.5px solid transparent'
+    document.body.appendChild(testElem)
+
+    if (testElem.offsetHeight == 1) {
+      document.body.classList.add('hairline-supported')
+    }
+
+    document.body.removeChild(testElem)
+
+  }
+
+  // 按需开启毛玻璃支持
   if (document.body.style.webkitBackdropFilter !== undefined) {
     document.body.classList.add('backdrop-filter-supported')
   }

@@ -104,6 +104,7 @@ function enqueue_assets() {
         wp_enqueue_script('margox-weixin', __RES__ . 'js/libs/weixin-sdk.js', false, '1.0.0', true);
     }
     wp_enqueue_script('margox-highlight', __RES__ . 'js/libs/highlight/highlight.pack.js', false, '1.0.0', true);
+    wp_enqueue_script('margox-fastclick', __RES__ . 'js/libs/fastclick.js', false, '1.0.1', true);
     wp_enqueue_script('margox-lightbox', __RES__ . 'js/libs/lightbox.js', false, '1.0.1', true);
     wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.10', true);
 
