@@ -3,7 +3,7 @@
 <?php
 if (!is_singular()) {
 ?>
-          <h3 class="title"><a href="<?php the_permalink();?>" target="_blank"><?php the_title();?></a></h3>
+          <h3 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
 <?php
 } else {
 ?>

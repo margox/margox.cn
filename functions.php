@@ -82,7 +82,7 @@ function margox_excerpt_length($length) {
     return 300;
 }
 // 摘要后缀
-function margox_excerpt_more( $more ) {
+function margox_excerpt_more($more) {
     return "...";
 }
 add_filter('excerpt_length', 'margox_excerpt_length');
@@ -182,6 +182,66 @@ function margox_get_post_gallery($postid = null) {
     return false;
 
 }
+
+function margox_shortcode_gallery($atts) {
+    
+    $post = get_post();
+    static $index = 0;
+    $index++;
+    
+    extract(shortcode_atts(array(
+        'ids' => null,
+        'orderby' => null,
+        'link' => null,
+        'columns' => 4 
+    ),$atts));
+    
+    $ids = explode(',', $ids);
+
+    if ($orderby == 'rand') {
+        shuffle($ids);
+    }
+
+    $html = '<div class="post-gallery-wrap"><ul id="post-gallery-' . $index . '" class="post-gallery post-gallery-' . $columns . '-columns clearfix">';
+    
+    foreach ($ids as $id) {
+
+        if (is_numeric($id)) {
+
+            $attachment = get_post($id);
+            $full_src = wp_get_attachment_image_src($id, 'image-large');
+            $full_src = $full_src[0];
+            $thumb_url = wp_get_attachment_image_src($id, 'image-middle');
+            $thumb_url = $thumb_url[0];
+
+            if (empty($thumb_url)) {
+                $thumb_url = wp_get_attachment_image_src($id, 'thumbnail');
+                $thumb_url = $thumb_url[0];
+            }
+
+            if ($link == 'none') {
+                $href = $full_src . '" data-lightbox="gallery-shortcode-' . $post->ID;
+            } elseif ($link == 'file') {
+                $href = $full_src . '"';
+            } else {
+                $href = get_attachment_link($id) . '"';
+            }
+            $caption = $attachment->post_excerpt;
+            $html .= '
+            <li>
+                <a href="' . $href . '" data-title="' . $caption . '">
+                    <img onload="javascript:this.classList.add(\'loaded\');" class="fade-image" src="' . str_replace(array('http:', 'https:'), '', $thumb_url) . '" alt="' . $caption . '">
+                </a>
+            </li>';
+
+          }
+
+      }
+    
+    return force_balance_tags($html . '</ul></div>');
+
+}
+add_shortcode('gallery', 'margox_shortcode_gallery');
 
 // 获取文章音频字段
 function margox_get_post_audio($postid = null) {

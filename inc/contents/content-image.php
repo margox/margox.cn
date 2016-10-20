@@ -1,6 +1,7 @@
       <article id="post-<?php the_ID();?>" <?php post_class('post');?>>
 <?php
-if (is_singular()) {
+$is_singular = is_singular();
+if ($is_singular) {
 ?>
         <header class="post-header">
           <h3 class="title"><?php the_title();?></h3>
@@ -12,8 +13,17 @@ if (has_post_thumbnail()) {
   $img_src = wp_get_attachment_image_src($img_id, 'image-large');
 ?>
         <div class="post-featured-content">
+<?php
+  if ($is_singular) {
+?>
+          <a href="<?php echo $img_src[0];?>" data-title="<?php the_title();?>" data-lightbox="lightbox-<?php echo $post->ID?>" class="featured-image">
+<?php
+  } else {
+?>
           <a href="<?php the_permalink();?>" class="featured-image">
-            <img onload="javascript:this.classList.add('loaded');" class="fade-image" width="<?php echo $img_src[1];?>" height="<?php echo $img_src[2];?>" src="<?php echo $img_src[0];?>" alt="<?php the_title();?>"/>
+<?php
+  }
+?>            <img onload="javascript:this.classList.add('loaded');" class="fade-image" width="<?php echo $img_src[1];?>" height="<?php echo $img_src[2];?>" src="<?php echo $img_src[0];?>" alt="<?php the_title();?>"/>
           </a>
         </div>
 <?php
