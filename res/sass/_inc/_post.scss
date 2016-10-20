@@ -324,15 +324,17 @@
     margin-top: 20px;
   }
 
-  .post-gallery-wrap{
-    border-top: .5px solid #e4e4e5;
-  }
   .post-gallery-wrap,
   .format-gallery .post-featured-content{
     height: 170px;
     margin: 0 -20px;
     overflow: hidden;
     border-bottom: .5px solid #e4e4e5;
+  }
+
+  .post-gallery-wrap{
+    height: 171px;
+    border-top: .5px solid #e4e4e5;
   }
 
   .post-gallery{
