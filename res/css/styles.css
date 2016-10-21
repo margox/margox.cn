@@ -41,6 +41,9 @@ input, button {
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(30px); }
 
+.hairline-supported .hariline {
+  border-width: .5px; }
+
 .clearfix {
   overflow: hidden; }
 
@@ -1299,6 +1302,7 @@ input, button {
 
   .post-gallery-wrap {
     height: 171px;
+    margin-bottom: 20px;
     border-top: .5px solid #e4e4e5; }
 
   .post-gallery {

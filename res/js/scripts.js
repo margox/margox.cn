@@ -8,7 +8,7 @@
   }
 
   // 按需开启FastClick
-  !FastClick.notNeeded(document.body) && FastClick.attach(document.body)
+  // !FastClick.notNeeded(document.body) && FastClick.attach(document.body)
 
   // 按需开启毛玻璃支持
   if (document.body.style.webkitBackdropFilter !== undefined) {
