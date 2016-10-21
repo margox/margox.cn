@@ -106,7 +106,7 @@ function enqueue_assets() {
     wp_enqueue_script('margox-highlight', __RES__ . 'js/libs/highlight/highlight.pack.js', false, '1.0.0', true);
     // wp_enqueue_script('margox-fastclick', __RES__ . 'js/libs/fastclick.js', false, '1.0.1', true);
     wp_enqueue_script('margox-lightbox', __RES__ . 'js/libs/lightbox.js', false, '1.0.1', true);
-    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.13', true);
+    wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.14', true);
 
     // 加载CSS
     wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.18');
@@ -184,19 +184,62 @@ function margox_get_post_gallery($postid = null) {
 
 }
 
+function margox_shortcode_audio($atts) {
+    
+    $post = get_post();
+    static $index = 0;
+    $index ++;
+
+    extract(shortcode_atts(array(
+        'mp3' => null,
+        'artist' => null,
+        'name' => null,
+        'poster' => null,
+        'album' => null
+    ), $atts));
+
+    $html = '<div class="post-audio margox-audio-player" id="post-audio-' . $index . '"><div class="post-audio-obj" data-id="' . $index . '" data-audio="' . $mp3 . '"></div>';
+
+    if ($poster) {
+        $html .= '<div class="cover" style="background-image: url(' . $poster . ');">';
+    } else {
+        $html .= '<div class="cover">';
+    }
+
+    $html .= '<a href="javascript:void(0);" class="btn-play-pause" data-id="' . $index . '">
+            <i class="iconfont icon-play"></i>
+            <i class="iconfont icon-pause"></i>
+          </a>
+        </div>
+        <h5 class="caption">' . ($name ? $name : '未知名称') . '</h5>
+        <h6 class="sub-caption">' . ($artist ? $artist : '未知歌手') . '/ ' . ($album ? $album : '位置专辑') .'</h6>
+        <div class="progress">
+          <span class="played-time">00:00</span>
+          <span class="total-time">00:00</span>
+          <span class="progress-bar"></span>
+        </div>
+      </div>
+    </div>';
+
+    return force_balance_tags($html);
+
+}
+
+add_shortcode('audio', 'margox_shortcode_audio');
+
 function margox_shortcode_gallery($atts) {
     
     $post = get_post();
     static $index = 0;
-    $index++;
+    $index ++;
     
     extract(shortcode_atts(array(
         'ids' => null,
         'orderby' => null,
         'link' => null,
         'columns' => 4 
-    ),$atts));
-    
+    ), $atts));
+
     $ids = explode(',', $ids);
 
     if ($orderby == 'rand') {
@@ -227,6 +270,7 @@ function margox_shortcode_gallery($atts) {
             } else {
                 $href = get_attachment_link($id) . '"';
             }
+
             $caption = $attachment->post_excerpt;
             $html .= '
             <li>
@@ -242,6 +286,7 @@ function margox_shortcode_gallery($atts) {
     return force_balance_tags($html . '</ul></div>');
 
 }
+
 add_shortcode('gallery', 'margox_shortcode_gallery');
 
 // 获取文章音频字段

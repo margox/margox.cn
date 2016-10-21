@@ -1,4 +1,5 @@
 .margox-audio-player{
+  box-sizing: content-box;
   position: relative;
   height: 80px;
   padding: 16px;
@@ -110,4 +111,8 @@
 
   }
 
+}
+
+.markdown-body .margox-audio-player{
+  box-sizing: content-box;
 }

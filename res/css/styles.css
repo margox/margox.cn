@@ -163,6 +163,7 @@ input, button {
   display: none; }
 
 .margox-audio-player {
+  box-sizing: content-box;
   position: relative;
   height: 80px;
   padding: 16px;
@@ -235,6 +236,9 @@ input, button {
       float: left; }
     .margox-audio-player .progress .total-time {
       float: right; }
+
+.markdown-body .margox-audio-player {
+  box-sizing: content-box; }
 
 @font-face {
   font-family: octicons-link;
