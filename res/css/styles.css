@@ -1423,6 +1423,7 @@ input, button {
 
 @media screen and (max-width: 480px) {
   .blog-footer {
+    padding: 50px 20px;
     border: none; } }
 
 /*# sourceMappingURL=styles.css.map */
