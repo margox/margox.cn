@@ -168,8 +168,7 @@ input, button {
   height: 80px;
   padding: 16px;
   background-color: #fff;
-  border: .5px solid #ccc;
-  box-shadow: inset 0 0 0 5px #f4f4f5; }
+  border: .5px solid #ccc; }
   .margox-audio-player .cover,
   .margox-audio-player .caption,
   .margox-audio-player .sub-caption,
@@ -190,6 +189,8 @@ input, button {
       border: none;
       text-decoration: none;
       background-color: rgba(0, 0, 0, 0.5); }
+      .margox-audio-player .cover .btn-play-pause:hover {
+        background-color: rgba(0, 0, 0, 0.7); }
       .margox-audio-player .cover .btn-play-pause i {
         display: block;
         width: 80px;
@@ -911,7 +912,7 @@ input, button {
       margin-right: 60px;
       line-height: 40px; }
       .blog-header .menu li.current-menu-item a {
-        color: rgba(0, 0, 0, 0.8); }
+        color: #1da1f2; }
       .blog-header .menu li a {
         color: rgba(0, 0, 0, 0.5);
         font-size: 16px;
@@ -1094,7 +1095,7 @@ input, button {
       color: #333;
       text-decoration: none; }
       .post-header .title a:hover {
-        color: #000; }
+        color: #1da1f2; }
 
 .single-post .post-header {
   margin-bottom: 50px; }
@@ -1106,7 +1107,7 @@ input, button {
       color: #333;
       text-decoration: none; }
       .single-post .post-header .title a:hover {
-        color: #000; }
+        color: #1da1f2; }
 
 .post-featured-content {
   margin-top: 20px; }
@@ -1196,7 +1197,7 @@ input, button {
       color: #999;
       text-decoration: none; }
       .post-footer .metas a:hover {
-        color: #333; }
+        color: #1da1f2; }
     .post-footer .metas .date::after {
       content: '/';
       padding: 0 10px; }
@@ -1266,7 +1267,7 @@ input, button {
     font-size: 18px;
     text-decoration: none; }
     .post-navs a:hover {
-      color: #333; }
+      color: #1da1f2; }
 
 @media screen and (max-width: 980px) {
   .vudio-waveform-wrap {
