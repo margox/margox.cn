@@ -10,11 +10,37 @@
 
   .hello{
     display: inline-block;
-    margin: 0 0 10px 0;
-    padding: 0 0 10px 0;
+    margin: 0;
+    padding: 0;
     color: #666;
     font-size: 12px;
-    border-bottom: .5px solid #e4e4e5;
+  }
+
+  .social-icons{
+    height: 40px;
+    margin: 15px auto;
+    text-align: center;
+
+    a{
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      margin: 0 5px;
+      color: #aaa;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #fff;
+      border-radius: 50%;
+
+      &:hover{
+        color: #fff;
+        background-color: $color_highlight;
+      }
+
+    }
+
   }
 
   .copyright{
