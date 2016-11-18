@@ -1,4 +1,5 @@
 $color_highlight: #1da1f2;
+$color_dark: #333;
 
 $content_width: 980px;
 
@@ -16,12 +17,11 @@ html,body{
 }
 html{
   height: 100%;
+  background-color: $color_dark;
 }
 body{
   position: relative;
   box-sizing: border-box;
-  min-height: 100%;
-  padding-bottom: 204px;
   font-family: Helvetica, 'SourceHanSans', 'Microsoft Yahei';
   background-color: #fff;
   cursor: default;

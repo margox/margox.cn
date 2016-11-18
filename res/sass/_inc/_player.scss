@@ -3,9 +3,7 @@
   position: relative;
   height: 80px;
   padding: 16px;
-  background-color: #fff;
-  border: .5px solid #ccc;
-  // box-shadow: inset 0 0 0 5px #f4f4f5;
+  background-color: $color_dark;
 
   .cover,
   .caption,
@@ -73,12 +71,12 @@
   }
 
   .caption{    
-    color: #666;
+    color: rgba(#fff, 1);
     font-size: 14px;
   }
 
   .sub-caption{
-    color: #999;
+    color: rgba(#fff, .5);
     font-size: 12px;
     font-weight: normal;
   }
@@ -89,7 +87,7 @@
 
     span{
       height: 15px;
-      color: #aaa;
+      color: rgba(#fff, .5);
       line-height: 16px;
       font-size: 12px;
       font-weight: bold;
@@ -98,10 +96,10 @@
     .progress-bar{
       display: block;
       box-sizing: border-box;
-      height: 2px;
+      height: 1px;
       margin: 7px 45px;
-      background-color: #ccc;
-      border-left: solid 0 #aaa;
+      background-color: #000;
+      border-left: solid 0 $color_highlight;
     }
 
     .played-time{

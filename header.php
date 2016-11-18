@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes();?>>
+<html <?php language_attributes();?> manifest="<?php echo __THEME__ . 'offline.appcache';?>">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="format-detection" content="telephone=no">
