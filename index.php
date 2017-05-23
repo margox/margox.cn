@@ -3,16 +3,12 @@
     <div class="post-list">
 <?php
 if (have_posts()) {
-
   while (have_posts()) {
-
     the_post();
     get_template_part('inc/contents/content', get_post_format());
 
   }
-
   wp_reset_query();
-
 }
 ?>
     </div>

@@ -14,9 +14,9 @@
   // !FastClick.notNeeded(document.body) && FastClick.attach(document.body)
 
   // 注册ServiceWorker
-  if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/service-worker.js')
-  }
+  // if (navigator.serviceWorker) {
+  //   navigator.serviceWorker.register('/service-worker.js')
+  // }
 
   // 按需开启毛玻璃支持
   if (document.body.style.webkitBackdropFilter !== undefined) {
