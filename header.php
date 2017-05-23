@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes();?> manifest="<?php echo __THEME__ . 'offline.appcache';?>">
+<html <?php language_attributes();?>>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="format-detection" content="telephone=no">
@@ -34,7 +34,7 @@ if ($blog_description && (is_home() || is_front_page())) {
       <h1 class="logo"><span>超能刚哥</span></h1>
       <input id="J-mobile-menu-trigger-input" class="mobile-menu-trigger-input" type="checkbox">
       <label for="J-mobile-menu-trigger-input" class="mobile-menu-trigger iconfont icon-menu"></label>
-      <ul class="menu pull-left">
+      <ul class="menu pull-left blured-backdrop-light">
 <?php
 $menuParameters = array(
   'theme_location' => 'primary-menu',
