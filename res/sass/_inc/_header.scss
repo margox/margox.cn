@@ -1,30 +1,27 @@
-.blog-header{
-  position: relative;
-  height: 140px;
-  margin-bottom: 70px;
-  text-align: center;
-  border-top: .5px solid transparent;
-  border-bottom: .5px solid #E4E4E5;
 
-  .container{
-    height: 140px;
-  }
+.blog-header{
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header_height;
+  background-color: $color_header;
+  box-shadow: 0 10px 30px rgba($color_header, .2);
 
   .logo{
-    position: absolute;
-    right: 0;
-    left: 0;
-    width: 200px;
-    height: 60px;
-    margin: 55px auto 0 auto;
+    height: $header_height - 40;
+    margin: 20px 0;
+    padding: 0 30px;
     overflow: hidden;
-    text-align: center;
+    box-shadow: inset -.5px 0 0 rgba(#fff, .2);
 
     a,span{
-      color: rgba(#000, .7);
-      font-size: 24px;
-      font-weight: normal;
-      line-height: 60px;
+      display: block;
+      color: rgba(#fff, 1);
+      font-size: 26px;
+      font-weight: 300;
+      line-height: $header_height - 40;
       text-decoration: none;
     }
 
@@ -35,32 +32,32 @@
     display: none;
   }
 
-  .menu{
-    height: 40px;
-    margin-top: 65px;
-    list-style: none;
-    padding: 0;
-
-    li{
-      float: left;
-      margin-right: 60px;
-      line-height: 40px;
-
-      &.current-menu-item{
-
-        a{
-          color: $color_highlight;
+  .menu {
+    height: $header_height;
+    margin-left: 50px;
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      li{
+        float: left;
+        margin-right: 50px;
+        line-height: $header_height;
+        &.current-menu-item{
+          a{
+            color: #fff;
+          }
         }
-
-      }
-
-      a{
-        color: rgba(#000, .5);
-        font-size: 16px;
-        text-decoration: none;
-
-        &:hover{
-          color: rgba(#000, .8);
+        a{
+          color: rgba(#fff, .5);
+          font-size: 12px;
+          font-weight: bolder;
+          text-decoration: none;
+          text-transform: uppercase;
+          &:hover{
+            color: #fff;
+          }
         }
 
       }
@@ -71,10 +68,11 @@
 
   .searcher{
     position: relative;
-    width: 160px;
-    height: 40px;
+    width: 200px;
+    height: 36px;
+    margin-top: ($header_height - 36) / 2;
+    margin-right: 30px;
     overflow: hidden;
-    margin-top: 65px;
 
     form {
       display: block;
@@ -83,49 +81,48 @@
     input{
       position: absolute;
       top: 0;
-      right: 0;
-      width: 120px;
-      height: 40px;
-      padding: 0;
+      left: 0;
+      width: 145px;
+      height: 36px;
+      padding: 0 40px 0 15px;
       background-color: transparent;
       border: none;
-      color: rgba(#000, .6);
+      color: rgba(#fff, .8);
       font-size: 16px;
-      background-color: #fff;
-      opacity: 0;
-      pointer-events: none;
-      transition: .4s;
-      transform: translate3d(20px, 0, 0);
-
-      &:focus{
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate3d(0, 0, 0);
-
-        & + label{
-          background-color: #fff;
-        }
-
+      background-color: rgba(#000, .1);
+      border-radius: 3px;
+      &::-webkit-input-placeholder{
+        color: rgba(#fff, .3);
       }
-
+      &::-moz-placeholder{
+        color: rgba(#fff, .3);
+      }
+      &::-moz-placeholder{
+        color: rgba(#fff, .3);
+      }
+      &:-ms-input-placeholder{
+        color: rgba(#fff, .3);
+      }
     }
 
     label{
+      position: absolute;
+      top: 0;
+      right: 5px;
       display: block;
-      float: right;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       background: none;
       border: none;
       cursor: pointer;
-      color: rgba(#000, .5);
+      color: rgba(#fff, .5);
       text-align: center;
       font-size: 16px;
-      line-height: 40px;
+      line-height: 36px;
       transition: background .4s;
 
       &:hover{
-        color: #333;
+        color: #fff;
       }
 
     }
@@ -135,18 +132,17 @@
   .progress-bar{
     position: absolute;
     z-index: 1;
-    bottom: -.5px;
+    bottom: 0;
     left: 0;
-    height: .5px;
+    height: 1px;
     width: 0%;
     background-image: linear-gradient(to right, #e74c3c, #f1c40f, #2ecc71);
-    background-size: 100vw .5px;
+    background-size: 100vw 1px;
     pointer-events: none;
-    transition: all .2s, opacity .3s, transform .3s;
+    transition: all .2s, opacity .3s;
 
     &.completed{
       opacity: 0;
-      transform: scaleY(10);
     }
 
   }
@@ -170,7 +166,7 @@
       margin-top: 40px;
     }
 
-    .menu li{
+    .menu ul li{
       margin-right: 40px;
     }
 
@@ -251,7 +247,7 @@
       transition: .4s;
       transform: translate3d(0, 20px, 0);
 
-      li{
+      ul li{
         display: block;
         float: none;
         height: 50px;

@@ -1,7 +1,10 @@
 $color_highlight: #1da1f2;
 $color_dark: #333;
+$color_header: #4b68e7;
+$color_background: #f1f5f9;//#2e3238;
+$header_height: 80px;
 
-$content_width: 980px;
+$content_width: 1100px;
 
 $phone-screen: "screen and (max-width: 480px)";
 $tablet-screen: "screen and (max-width: 980px)";
@@ -17,13 +20,13 @@ html,body{
 }
 html{
   height: 100%;
-  background-color: $color_dark;
+  background-color: $color_background;
 }
 body{
   position: relative;
   box-sizing: border-box;
-  font-family: Helvetica, 'SourceHanSans', 'Microsoft Yahei';
-  background-color: #fff;
+  padding-top: $header_height;
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Wenquanyi Micro Hei", sans-serif;
   cursor: default;
   -webkit-font-smoothing: antialiased;
 }
@@ -36,8 +39,12 @@ input, button{
   max-width: 100%;
   margin: {
     right: auto;
+    bottom: 20px;
     left: auto;
   }
+  padding: 80px 0 50px 0;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
 }
 
 .blured-backdrop-light{

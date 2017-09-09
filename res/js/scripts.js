@@ -1,5 +1,8 @@
 -function(undefined) {
 
+ 'use strict'
+
+  var assetsRoot = '/wp-content/themes/margox.cn/res'
   var $ = document.querySelector.bind(document)
   var $all = document.querySelectorAll.bind(document)
 
@@ -9,6 +12,11 @@
 
   // 按需开启FastClick
   // !FastClick.notNeeded(document.body) && FastClick.attach(document.body)
+
+  // 注册ServiceWorker
+  // if (navigator.serviceWorker) {
+  //   navigator.serviceWorker.register('/service-worker.js')
+  // }
 
   // 按需开启毛玻璃支持
   if (document.body.style.webkitBackdropFilter !== undefined) {
@@ -111,6 +119,7 @@
     player_obj.addEventListener('ended', function() {
       player_btn.classList.remove('playing')
       player_status = 'ended'
+      player_bar.style.borderLeftWidth = player_bar_width + 'px'
       clearTimeout(player_timmer)
     })
 
@@ -141,7 +150,7 @@
 
         player_played.innerText = sec2min(player_obj.currentTime)
         player_bar.style.borderLeftWidth = player_obj.currentTime / player_obj.duration * player_bar_width + 'px'
-        player_timmer = setTimeout(playingFunc, 1000)
+        player_timmer = setTimeout(playingFunc, 500)
 
       } else {
         clearTimeout(player_timmer)
@@ -178,7 +187,7 @@
   function sec2min(second) {
 
     var min = Math.floor(second / 60)
-    var sec = Math.floor(second % 60)
+    var sec = Math.ceil(second % 60)
 
     sec < 10 && (sec = "0" + sec)
     min < 10 && (min = "0" + min)

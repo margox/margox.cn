@@ -1,62 +1,10 @@
 .blog-footer{
-  padding: 100px 50px 150px 50px;
-  text-align: center;
-  background-color: #f4f4f5;
-
-  .hello{
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    color: #aaa;
-    font-size: 12px;
-  }
-
-  .social-icons{
-    height: 40px;
-    margin: 15px auto;
-    text-align: center;
-
-    a{
-      display: inline-block;
-      width: 36px;
-      height: 36px;
-      margin: 0 5px;
-      color: #ccc;
-      font-size: 24px;
-      line-height: 36px;
-      text-align: center;
-      text-decoration: none;
-      background-color: #fff;
-      border-radius: 4px;
-
-      &:hover{
-        color: #fff;
-        background-color: $color_highlight;
-      }
-
-    }
-
-  }
-
-  .copyright{
-    color: #ccc;
-    font-size: 12px;
+  .copy-right{
+    color:#919599;
+    font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
   }
-
-}
-
-.cnzz img{
-  position: absolute;
-  opacity: 0;
-}
-
-@media #{$phone_screen} {
-
-  .blog-footer{
-    padding: 50px 20px; 
-    border: none;
-  }
-
 }

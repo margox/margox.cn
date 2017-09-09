@@ -1,5 +1,9 @@
 .post{
-  margin-bottom: 40px;
+  width: 1100px;
+  box-sizing: border-box;
+  margin: 0 auto 40px auto;
+  padding: 0 150px 40px 150px;
+  border-bottom: .5px dashed #f1f5f9 - 10;
 }
 
 .post-header{
@@ -56,15 +60,20 @@
     display: block;
     overflow: hidden;
     background-color: #333;
+    border-radius: 6px;
 
     img {
       display: block;
       max-width: 100%;
-      height: auto;
+      height: 300px;
+      border-radius: 6px;
+      object-fit: cover;
     }
 
-    &:hover img{
-      opacity: .8;
+    &:hover {
+      img{
+        opacity: .8;
+      }
     }
 
   }
@@ -94,6 +103,7 @@
       padding-bottom: 100%;
       overflow: hidden;
       background-color: #333;
+      border-radius: 6px;
 
       img{
         position: absolute;
@@ -103,10 +113,13 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 6px;
       }
 
-      &:hover img{
-        opacity: .8;
+      &:hover {
+        img{
+          opacity: .8;
+        }
       }
 
     }
@@ -157,7 +170,7 @@
 }
 
 .post-footer{
-  border-top: .5px solid #e4e4e5;
+  // border-top: .5px solid #e4e4e5;
 
   &.no-border{
     border-top: none;
@@ -167,11 +180,12 @@
     position: relative;
     height: 40px;
     line-height: 40px;
-    color: #999;
-    font-size: 14px;
+    color: #ccc;
+    font-size: 12px;
+    font-weight: bold;
 
     a{
-      color: #999;
+      color: #ccc;
       text-decoration: none;
 
       &:hover{
@@ -182,9 +196,12 @@
 
     .date::after{
       content: '/';
-      padding: 0 10px;
+      padding: 0 5px;
     }
 
+    .btn-show-qrcode{
+      display: none;
+    }
     .post-qrcode{
       position: absolute;
       z-index: 10;
@@ -194,8 +211,10 @@
       height: 150px;
       padding: 10px;
       background-color: $color_dark;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(#000, .3);
       opacity: 0;
-      pointer-events: none;
+      visibility: hidden;
       transition: .3s;
       transform: translate3d(0, 30px, 0);
 
@@ -216,8 +235,10 @@
 
     }
 
+    .post-qrcode:hover,
     .btn-show-qrcode:hover + .post-qrcode{
       opacity: 1;
+      visibility: visible;
       transform: translate3d(0, 0, 0);
     }
 

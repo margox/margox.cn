@@ -3,7 +3,10 @@
   position: relative;
   height: 80px;
   padding: 16px;
-  background-color: $color_dark;
+  background-color: #212519;
+  // border: .5px solid #f1f5f9 - 10;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba($color_header, .2);
 
   .cover,
   .caption,
@@ -20,12 +23,15 @@
     height: 80px;
     background-color: #222;
     background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 50%;
 
     .btn-play-pause{
       display: block;
       width: 80px;
       height: 80px;
       border: none;
+      border-radius: 50%;
       text-decoration: none;
       background-color: rgba(#000, .5);
       &:hover{
@@ -71,12 +77,12 @@
   }
 
   .caption{    
-    color: rgba(#fff, 1);
+    color: rgba(#fff, .7);
     font-size: 14px;
   }
 
   .sub-caption{
-    color: rgba(#fff, .5);
+    color: rgba(#fff, .3);
     font-size: 12px;
     font-weight: normal;
   }
@@ -87,7 +93,7 @@
 
     span{
       height: 15px;
-      color: rgba(#fff, .5);
+      color: rgba(#fff, .3);
       line-height: 16px;
       font-size: 12px;
       font-weight: bold;
@@ -96,10 +102,12 @@
     .progress-bar{
       display: block;
       box-sizing: border-box;
-      height: 1px;
-      margin: 7px 45px;
-      background-color: #000;
+      height: 4px;
+      margin: 6px 45px;
+      background-color: rgba(#fff, .2);
       border-left: solid 0 $color_highlight;
+      border-radius: 2px;
+      transition: .5s linear;
     }
 
     .played-time{
