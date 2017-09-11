@@ -1,7 +1,13 @@
       <article id="post-<?php the_ID();?>" <?php post_class('post');?>>
         <div class="post-inner">
           <header class="post-header">
-            <h3 class="title"><?php the_title();?></h3>
+            <h3 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+          </header>
+          <div class="post-featured-content">
+            <?php echo margox_get_post_gallery($post->ID);?>
+          </div>
+          <div class="post-excerpt"><?php the_excerpt();?></div>
+          <footer class="post-footer">
             <div class="metas">
               <div class="date pull-left">
                 <a class="author-link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" rel="author">
@@ -12,10 +18,6 @@
               <div class="comments pull-left"><?php comments_popup_link('暂无评论', '1条评论', '%条评论'); ?></div>
               <div class="share pull-right"><a href="javascript:void(0);" class="btn-show-qrcode"><i class="iconfont icon-qrcode"></i></a><div class="post-qrcode"><img src="<?php echo margox_generate_qrcode(urlencode(get_permalink()));?>"></div></div>
             </div>
-          </header>
-          <div class="post-featured-content">
-            <?php echo margox_get_post_gallery($post->ID);?>
-          </div>
-          <div class="post-content markdown-body"><?php the_content();?></div>
+          </footer>
         </div>
       </article>

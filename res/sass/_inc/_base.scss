@@ -6,7 +6,7 @@ $header_height: 80px;
 
 $content_width: 1100px;
 
-$phone-screen: "screen and (max-width: 480px)";
+$phone-screen: "screen and (max-width: 760px)";
 $tablet-screen: "screen and (max-width: 980px)";
 
 *{
@@ -102,10 +102,8 @@ input, button{
 
   .container{
     width: auto;
-    margin: {
-      right: 30px;
-      left: 30px;
-    }
+    margin: 0 30px;
+    padding-top: 50px;
   }
 
 }
@@ -113,23 +111,16 @@ input, button{
 @media #{$phone-screen} {
 
   body{
-    padding-top: 70px;
-  }
-
-  .blog-body::before{
-    display: block;
-    width: 100vw;
-    height: 10px;
-    margin: -10px -20px 0 -20px;
-    background-color: #f4f4f5;
-    content: '';
+    padding-top: 30px;
   }
 
   .container{
     margin: {
-      right: 20px;
-      left: 20px;
+      right: 0;
+      left: 0;
     }
+    padding-bottom: 40px;
+    border-radius: 0;
   }
 
 }

@@ -17,19 +17,13 @@ if (have_posts()) {
 ?>
     </div>
 <?php
-if ( comments_open() ) {
-?>
-    <div id="post-comments" class="post-comments">
-      <?php comments_template();?>
-    </div>
-<?php
-}
+  comments_template();
 ?>
   </div>
 <?php
 $prev_post = get_previous_post();
 $next_post = get_next_post();
-if ($prev_post || $next_post) {
+if (false && ($prev_post || $next_post)) {
 ?>
   <div class="post-navs">
 <?php

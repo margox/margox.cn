@@ -79,7 +79,7 @@ add_filter('wp_title', 'new_wp_title');
 
 // 摘要长度
 function margox_excerpt_length($length) {
-  return 300;
+  return 100;
 }
 // 摘要后缀
 function margox_excerpt_more($more) {

@@ -1,6 +1,6 @@
 
 .blog-header{
-  position: fixed;
+  position: absolute;
   z-index: 99;
   top: 0;
   left: 0;
@@ -90,7 +90,7 @@
       color: rgba(#fff, .8);
       font-size: 16px;
       background-color: rgba(#000, .1);
-      border-radius: 3px;
+      border-radius: 6px;
       &::-webkit-input-placeholder{
         color: rgba(#fff, .3);
       }
@@ -150,52 +150,31 @@
 }
 
 @media #{$tablet-screen} {
-
   .blog-header{
-    height: 100px;
-
-    .container{
-      height: 100px;
-    }
-
-    .logo{
-      margin-top: 30px;
-    }
-
-    .menu,.searcher{
-      margin-top: 40px;
-    }
-
-    .menu ul li{
-      margin-right: 40px;
-    }
-
+    position: fixed;
+    z-index: 50;
   }
-
 }
 
 @media #{$phone-screen} {
 
   .blog-header{
-    position: fixed;
-    z-index: 50;
-    top: 0;
-    right: 0;
-    width: 100%;
     height: 60px;
-    background-clip: padding-box;
-    border-top: 0;
-    border-bottom: 0.5px solid rgba(#000, .1);
-
     .container{
       height: 60px;
       margin: 0;
     }
 
     .logo{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      float: none;
       height: 60px;
-      margin-top: 0;
+      margin: 0;
+      box-shadow: none;
       color: rgba(#000, .8);
+      transform: translateX(-50%);
 
       a, span{
         display: block;
@@ -225,7 +204,7 @@
       float: left;
       width: 60px;
       height: 60px;
-      color: rgba(#000, .5);
+      color: #fff;
       font-size: 18px;
       text-align: center;
       line-height: 60px;
@@ -234,33 +213,42 @@
     .menu{
       position: absolute;
       z-index: 51;
-      top: 60px;
+      top: 59px;
       left: 0;
       width: 100%;
       height: auto;
       margin: 0;
-      background-color: #fff;
-      border-bottom: .5px solid rgba(0,0,0,.1);
+      background-color: $color_header;
       opacity: 0;
       pointer-events: none;
-      box-shadow: 0 1px 2px rgba(#000, .05);
+      box-shadow: 0 10px 30px rgba($color_header, .3);
       transition: .4s;
       transform: translate3d(0, 20px, 0);
 
-      ul li{
-        display: block;
-        float: none;
-        height: 50px;
-        margin: 0;
-        padding: 0 20px;
-        border-top: .5px solid rgba(0,0,0,.1);
-
-        a{
+      ul {
+        width: 100%;
+        li{
           display: block;
+          float: none;
           height: 50px;
-          line-height: 50px;
-        }
+          margin: 0;
+          padding: 0;
+          border-top: .5px solid rgba(#fff, .2);
+          text-align: center;
+          &.current-menu-item{
+            a{
+              font-weight: bolder;
+            }
+          }
+          a{
+            display: block;
+            height: 50px;
+            color: #fff;
+            line-height: 50px;
+            font-weight: normal;
+          }
 
+        }
       }
 
     }

@@ -5,15 +5,15 @@
 if (have_posts()) {
   while (have_posts()) {
     the_post();
-    get_template_part('inc/contents/content', get_post_format());
+    get_template_part('inc/contents/excerpt', get_post_format());
 
   }
   wp_reset_query();
 }
 ?>
     </div>
-  </div>
-  <div class="post-pagers"><?php
+    <div class="post-pagers">
+<?php
 global $wp_query;
 $big = 999999999;
 echo paginate_links(array(
@@ -25,5 +25,7 @@ echo paginate_links(array(
   'prev_text' => '<i class="iconfont icon-left"></i>',
   'next_text' => '<i class="iconfont icon-right"></i>'
 ));
-?></div>
+?>
+    </div>
+  </div>
 <?php get_footer();?>
