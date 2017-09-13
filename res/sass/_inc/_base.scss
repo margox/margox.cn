@@ -12,6 +12,7 @@ $tablet-screen: "screen and (max-width: 980px)";
 *{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-overflow-scrolling: touch;
+  -webkit-appearance: none;
 }
 
 html,body{

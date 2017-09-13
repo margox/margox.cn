@@ -12,20 +12,13 @@
     line-height: 14px;
 
     a{
-      color: #ccc;
+      color: #aaa;
       text-decoration: none;
 
       &:hover{
         color: $color_highlight;
       }
 
-    }
-
-    .date a{
-      color: $color_highlight;
-      &:hover{
-        text-decoration: underline;
-      }
     }
 
     .date::after,
