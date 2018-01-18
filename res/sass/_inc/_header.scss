@@ -202,14 +202,23 @@
     }
 
     .mobile-menu-trigger{
+      position: relative;
       display: block;
       float: left;
       width: 60px;
       height: 60px;
+      overflow: hidden;
       color: #fff;
       font-size: 18px;
       text-align: center;
       line-height: 60px;
+      span{
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
     }
 
     .menu{

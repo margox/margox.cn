@@ -33,7 +33,7 @@ if ($blog_description && (is_home() || is_front_page())) {
   <header class="blog-header">
     <h1 class="logo pull-left"><span>超能刚哥</span></h1>
     <input id="J-mobile-menu-trigger-input" class="mobile-menu-trigger-input" type="checkbox">
-    <label for="J-mobile-menu-trigger-input" class="mobile-menu-trigger iconfont icon-menu"></label>
+    <label for="J-mobile-menu-trigger-input" class="mobile-menu-trigger iconfont icon-menu"><span>菜单栏</span></label>
     <div class="menu pull-left">
 <?php
 $menuParameters = array(
