@@ -22,8 +22,8 @@ echo paginate_links(array(
   'current' => max(1, get_query_var('paged')),
   'total' => $wp_query->max_num_pages,
   'prev_next' => true,
-  'prev_text' => '<i class="iconfont icon-left"></i>',
-  'next_text' => '<i class="iconfont icon-right"></i>'
+  'prev_text' => '<i class="iconfont icon-left"></i><b>上一页</b>',
+  'next_text' => '<i class="iconfont icon-right"></i><b>下一页</b>'
 ));
 ?>
     </div>

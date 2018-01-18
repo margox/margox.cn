@@ -6,13 +6,13 @@
   .metas{
     position: relative;
     height: 14px;
-    color: #ccc;
+    color: #86888a;
     font-size: 12px;
     font-weight: bold;
     line-height: 14px;
 
     a{
-      color: #aaa;
+      color: #86888a;
       text-decoration: none;
 
       &:hover{
@@ -265,6 +265,14 @@
 
   &:empty{
     display: none;
+  }
+
+  b{
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
   }
 
   a,span{
