@@ -2,7 +2,7 @@ $color_highlight: #1da1f2;
 $color_dark: #2e3238;
 $color_header: $color_dark + 5;
 $color_background: #f1f2f3;
-$header_height: 80px;
+$header_height: 60px;
 
 $content_width: 980px;
 
@@ -46,7 +46,7 @@ input, button{
   padding: 80px 0 50px 0;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(#000, .05);
+  // box-shadow: 0 10px 20px rgba(#000, .05);
 }
 
 .blured-backdrop-light{
