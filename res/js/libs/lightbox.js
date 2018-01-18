@@ -127,7 +127,7 @@
       elements.list.classList.add('touch-moving')
       startX = lastX = e.touches[0].clientX
 
-    })
+    }, {passive: true})
 
     lightboxObj.addEventListener('touchmove', function(e) {
 
@@ -151,7 +151,7 @@
 
       }
 
-    })
+    }, {passive: true})
 
     lightboxObj.addEventListener('touchend', function(e) {
 

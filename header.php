@@ -8,6 +8,7 @@
 <meta name="x5-page-mode" content="app">
 <meta name="x5-fullscreen" content="true">
 <meta charset="<?php bloginfo('charset');?>">
+<link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="//at.alicdn.com/t/font_397904_p4mz45lkrumr6bt9.css"> 
 <link rel="apple-touch-icon" href="<?php echo get_res_url('images/favicon.png');?>">
 <link rel="shortcut icon" href="<?php echo get_res_url('images/favicon.png');?>">
