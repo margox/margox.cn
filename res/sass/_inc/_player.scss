@@ -3,8 +3,8 @@
   position: relative;
   height: 80px;
   padding: 16px;
-  background-color: #212519;
-  // border: .5px solid #f1f5f9 - 10;
+  background-color: $color_dark;
+  border: .5px solid $color_dark - 10;
   border-radius: 6px;
   box-shadow: 0 8px 20px rgba($color_header, .2);
 

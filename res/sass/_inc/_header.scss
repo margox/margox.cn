@@ -1,27 +1,27 @@
 
 .blog-header{
-  position: absolute;
+  position: fixed;
   z-index: 99;
   top: 0;
   left: 0;
   width: 100%;
   height: $header_height;
   background-color: $color_header;
-  box-shadow: 0 10px 30px rgba($color_header, .2);
+  box-shadow: inset 0 -.5px 0 rgba(#000, .5), 0 10px 20px rgba(#000, .1);
 
   .logo{
-    height: $header_height - 40;
-    margin: 20px 0;
+    height: $header_height - 20;
+    margin: 10px 0;
     padding: 0 30px;
     overflow: hidden;
-    box-shadow: inset -.5px 0 0 rgba(#fff, .2);
+    box-shadow: inset -.5px 0 0 rgba(#fff, .1);
 
     a,span{
       display: block;
       color: rgba(#fff, 1);
       font-size: 26px;
-      font-weight: 300;
-      line-height: $header_height - 40;
+      font-weight: normal;
+      line-height: $header_height - 20;
       text-decoration: none;
     }
 
@@ -46,13 +46,12 @@
         line-height: $header_height;
         &.current-menu-item{
           a{
-            color: #fff;
+            color: $color_highlight;
           }
         }
         a{
           color: rgba(#fff, .5);
-          font-size: 12px;
-          font-weight: bolder;
+          font-size: 16px;
           text-decoration: none;
           text-transform: uppercase;
           &:hover{
@@ -89,8 +88,11 @@
       border: none;
       color: rgba(#fff, .8);
       font-size: 16px;
-      background-color: rgba(#000, .1);
-      border-radius: 6px;
+      background-color: rgba(#fff, .1);
+      border-radius: 18px;
+      &:focus{
+        box-shadow: inset 0 0 0 1px $color_highlight;
+      }
       &::-webkit-input-placeholder{
         color: rgba(#fff, .3);
       }

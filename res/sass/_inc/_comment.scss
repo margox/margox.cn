@@ -5,7 +5,7 @@
   .no-comments{
     margin: 20px 0 40px 0;
     padding: 20px;
-    background-color: #f1f5f9;
+    background-color: #f1f2f3;
     border-radius: 6px;
     text-align: center;
     color: #919599;
@@ -40,7 +40,7 @@
       li{
         margin-top: 15px;
         padding-top: 15px;
-        border-top: 1px dashed #f1f5f9 - 10;
+        border-top: 1px dashed #f1f2f3 - 10;
       }
     }
     li .comment-body{
@@ -147,7 +147,7 @@
       margin: -30px 0 0 80px;
       padding: 20px;
       background-color: #fff;
-      border: 1px solid #f1f5f9 - 10;
+      border: 1px solid #f1f2f3 - 10;
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(#000, .05);
       &::before{
@@ -158,8 +158,8 @@
         width: 10px;
         height: 10px;
         background-color: #fff;
-        border-top: 1px solid #f1f5f9 - 10;
-        border-right: 1px solid #f1f5f9 - 10;
+        border-top: 1px solid #f1f2f3 - 10;
+        border-right: 1px solid #f1f2f3 - 10;
         content: '';
         transform: rotate(-45deg);
       }
@@ -172,7 +172,7 @@
     > li {
       margin-bottom: 30px;
       padding-bottom: 30px;
-      border-bottom: dashed 1px #f1f5f9 - 10;
+      border-bottom: dashed 1px #f1f2f3 - 10;
       > .children{
         position: relative;
         padding-left: 80px;
@@ -195,7 +195,7 @@
       text-align: center;
       line-height: 40px;
       text-decoration: none;
-      background-color: #f1f5f9;
+      background-color: #f1f2f3;
       border-radius: 6px;
       i{
         font-size: 12px;

@@ -71,17 +71,20 @@
     position: absolute;
     z-index: 5;
     top: 50%;
-    width: 60px;
-    height: 60px;
-    margin-top: -30px;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(#000, .1);
     color: #fff;
     font-size: 24px;
     text-align: center;
     text-decoration: none;
-    line-height: 60px;
+    line-height: 54px;
     transition: .4s;
     &:hover{
-      opacity: .8;
+      background-color: $color_highlight;
+      box-shadow: 0 5px 10px rgba($color_highlight, .1);
     }
   }
 
@@ -95,16 +98,16 @@
   }
 
   .btn-close{
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
     margin: 0;
   }
 
   .btn-prev{
-    left: 0;
+    left: 5px;
   }
   .btn-next{
-    right: 0;
+    right: 5px;
   }
 
   .index{
