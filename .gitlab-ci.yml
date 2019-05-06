@@ -1,0 +1,9 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  scripts:
+    - echo 'Deploying...'
+    - mv -rf ./ /var/www/margox.me/wp-content/themes/margox.cn
+    - echo 'Deploy success...'

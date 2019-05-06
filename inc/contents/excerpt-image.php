@@ -22,7 +22,6 @@ if (has_post_thumbnail()) {
               </div>
               <div class="categories pull-left"><?php the_category(',', 'single');?></div>
               <div class="comments pull-left"><?php comments_popup_link('暂无评论', '1条评论', '%条评论'); ?></div>
-              <div class="share pull-right"><a href="javascript:void(0);" class="btn-show-qrcode"><i class="iconfont icon-qrcode"></i></a><div class="post-qrcode"><img src="<?php echo margox_generate_qrcode(urlencode(get_permalink()));?>"></div></div>
             </div>
           </footer>
         </div>

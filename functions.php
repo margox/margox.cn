@@ -109,7 +109,7 @@ function enqueue_assets() {
   wp_enqueue_script('margox-scripts', __RES__ . 'js/scripts.js', false, '1.0.24', true);
 
   // 加载CSS
-  wp_enqueue_style('margox-styles', __RES__ . 'css/styles.css', false, '1.0.25');
+  wp_enqueue_style('margox-styles', __RES__ . 'css/styles.min.css', false, '1.0.25');
   wp_enqueue_style('margox-highlight-github', __RES__ . 'js/libs/highlight/styles/github.css', false, '1.0.0');
 
 }
@@ -295,13 +295,6 @@ function margox_get_post_audio($postid = null) {
   !is_numeric($postid) && $postid = get_the_ID();
   $audio = get_post_meta($postid, 'margox_meta_audio', true);
   return $audio;
-
-}
-
-// 生产二维码
-function margox_generate_qrcode($data) {
-
-  return '//api.qrserver.com/v1/create-qr-code/?color=222222&bgcolor=FFFFFF&qzone=1&margin=0&size=400x400&ecc=L&data=' . $data;
 
 }
 

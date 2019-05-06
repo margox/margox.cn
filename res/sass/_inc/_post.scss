@@ -26,50 +26,6 @@
       content: '/';
       padding: 0 5px;
     }
-
-    .btn-show-qrcode{
-      display: none;
-    }
-    .post-qrcode{
-      position: absolute;
-      z-index: 10;
-      right: 25px;
-      bottom: 0;
-      width: 150px;
-      height: 150px;
-      padding: 10px;
-      background-color: $color_dark;
-      border-radius: 6px;
-      box-shadow: 0 10px 30px rgba(#000, .3);
-      opacity: 0;
-      visibility: hidden;
-      transition: .3s;
-      transform: translate3d(0, 30px, 0);
-
-      &::after{
-        position: absolute;
-        right: -10px;
-        bottom: 15px;
-        content: '';
-        border: solid 5px transparent;
-        border-left-color: $color_dark;
-      }
-
-      img{
-        display: block;
-        width: 150px;
-        height: 150px;
-      }
-
-    }
-
-    .post-qrcode:hover,
-    .btn-show-qrcode:hover + .post-qrcode{
-      opacity: 1;
-      visibility: visible;
-      transform: translate3d(0, 0, 0);
-    }
-
   }
 }
 
@@ -469,14 +425,6 @@
     margin: 15px 0;
   }
 
-
-  .post-footer{
-    .btn-show-qrcode{
-      display: none;
-    }
-
-  }
-
   .post-pagers{
     margin-top: 0;
     padding: 0;
@@ -491,5 +439,3 @@
   }
 
 }
-
-@import 'comment';
